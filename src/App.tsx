@@ -3,7 +3,7 @@ function App() {
     <>
       <picture>
         <source srcSet="/mt-day.svg" type="image/svg+xml" media="(prefers-color-scheme: light)" />
-        <img src="mt.svg" />
+        <img src="mt.svg" className="prdel"/>
       </picture>
       <h1>みんじや</h1>
       <code>
