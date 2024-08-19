@@ -1,60 +1,64 @@
-@import url('https://fonts.googleapis.com/css2?family=Stick&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Stick&display=swap");
+
+@font-face {
+    font-family: Jetbrains Mono;
+    src: url("/fonts/JetBrainsMono-Medium.woff2");
+}
 
 :root {
-  font-family: Stick, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+    font-family: Stick, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #1f1f1f;
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #161729;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
 }
 
 code {
-  font-family: "Merriweather Sans", sans-serif;
-  font-size: 1.5rem;
-  color: #888;
-  letter-spacing: 0.2rem;
+    font-family: "Jetbrains Mono", monospace;
+    font-size: 1.5rem;
+    color: #999;
+    letter-spacing: 0.1rem;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+    margin: 0;
+    display: flex;
+    place-items: center;
+    min-width: 320px;
+    min-height: 100vh;
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+    font-size: 3.2em;
+    line-height: 1.1;
 }
 
 @media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
+    :root {
+        color: #213547;
+        background-color: #ffffff;
+    }
 }
 
-.prdel {
-  transition: transform 0.5s ease;
+.image {
+    transition: transform 0.5s ease;
 }
 
-.prdel:hover {
-  transform: rotate(-60deg);
-  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); 
+.image:hover {
+    transform: rotate(-60deg);
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }

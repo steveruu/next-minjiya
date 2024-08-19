@@ -3,11 +3,11 @@ function App() {
     <>
       <picture>
         <source srcSet="/mt-day.svg" type="image/svg+xml" media="(prefers-color-scheme: light)" />
-        <img src="mt.svg" className="prdel"/>
+        <img src="mt.svg" className="image" alt="minjiya" />
       </picture>
       <h1>みんじや</h1>
       <code>
-        minjiya
+        shaping the future
       </code>
     </>
   )
