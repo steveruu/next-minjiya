@@ -21,9 +21,8 @@
 }
 
 #root {
-    max-width: 1280px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 0;
     text-align: center;
 }
 
@@ -61,4 +60,23 @@ h1 {
 .image:hover {
     transform: rotate(-60deg);
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.branding > img {
+    border: 0px solid rgb(9, 9, 9);
+    border-radius: 16px;
+    width: 80%;
+    max-width: 800px;
+}
+
+.branding-site {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #1e1e1e;
 }
