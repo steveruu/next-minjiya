@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Stick&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: Jetbrains Mono;
+    src: url("/fonts/JetBrainsMono-Medium.woff2");
+}
+
+:root {
+    --background: #ffffff;
+    --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: #0a0a0a;
+        --foreground: #ededed;
+    }
+}
+
+body {
+    color: var(--foreground);
+    background: var(--background);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+code {
+    font-family: "JetBrains Mono", monospace;
+}
+
+@layer utilities {
+    .text-balance {
+        text-wrap: balance;
+    }
+}
