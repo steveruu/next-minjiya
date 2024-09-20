@@ -41,7 +41,7 @@ export default function RootLayout({
   return (
     <html lang="zxx">
       <body
-        className={`antialiased flex place-items-center min-h-screen text-center bg-[#161729]`}
+        className={`antialiased flex place-items-center h-dvh text-center bg-[#161729]`}
       >
         {children}
       </body>
