@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /branding
+
+# Allow all crawlers
+User-agent: *
+Allow: /
