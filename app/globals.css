@@ -1,27 +1,27 @@
-@import url("https://fonts.googleapis.com/css2?family=Stick&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @font-face {
-    font-family: Jetbrains Mono;
-    src: url("/fonts/JetBrainsMono-Medium.woff2");
+    font-family: Mona Sans;
+    src: url("/fonts/MonaSans-Bold.woff2") format("woff2");
+    font-weight: bold;
 }
 
-:root {
-    --background: #ffffff;
-    --foreground: #171717;
+@font-face {
+    font-family: Mona Sans;
+    src: url("/fonts/MonaSans-Regular.woff2") format("woff2");
+    font-weight: normal;
 }
 
 body {
-    color: var(--foreground);
-    background: var(--background);
     font-family: Arial, Helvetica, sans-serif;
 }
 
 code {
-    font-family: "JetBrains Mono", monospace;
+    font-family: "Rubik", monospace;
 }
 
 @layer utilities {
