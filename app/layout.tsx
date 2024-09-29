@@ -9,6 +9,7 @@ export const metadata: Metadata = {
     url: "https://minjiya.com",
     title: "minjiya",
     description: 'shaping the future',
+    siteName: "minjiya",
     images: [
       {
         url: "https://minjiya.com/mt.png",
