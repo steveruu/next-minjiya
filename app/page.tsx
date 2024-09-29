@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import CodePreview from "@/components/CodePreview";
 import Technologies from "@/components/Technologies";
 import Image from "next/image";
+import Card from "@/components/Card";
 import { FaArrowDown } from "react-icons/fa6";
 
 export default function Home() {
@@ -27,18 +28,52 @@ export default function Home() {
                     </div>
                     <CodePreview />
                 </div>
-                <h3 className="m-10 xl:m-0 text-3xl font-rubik font-medium tracking-wider text-center text-neutral-100">shaping the <span className="text-purpur">future</span></h3>
+                <h3 className="m-10 xl:m-0 text-3xl font-rubik font-medium tracking-wider text-center text-neutral-100">
+                    shaping the <span className="text-purpur">future</span>
+                </h3>
                 <div className="flex justify-center mt-5">
-                    <a href="#technologies" className="p-5"><FaArrowDown className="text-3xl text-white animate-bounce" /></a>
+                    <a href="#technologies" className="p-5">
+                        <FaArrowDown className="text-3xl text-white animate-bounce" />
+                    </a>
                 </div>
             </div>
             <div className="min-h-screen mt-10">
-                <p id="technologies" className="pt-10 text-center text-3xl font-bold font-rubik">using <span className="text-purpur">cutting edge technologies.</span></p>
+                <p
+                    id="technologies"
+                    className="pt-10 text-center text-3xl font-semibold font-rubik"
+                >
+                    using{" "}
+                    <span className="text-purpur">
+                        cutting edge technologies.
+                    </span>
+                </p>
                 <Technologies />
+                <p
+                    id="references"
+                    className="pt-10 text-center text-3xl font-semibold font-rubik"
+                >
+                    our projects
+                </p>
+                <div className="flex flex-row flex-wrap justify-around items-center max-w-[500px]">
+                    <Card
+                        title="Millers Oils"
+                        description="complete website redesign & backend rewrite, Stripe as payment
+                            provider, Prisma as database provider, Next.js as frontend"
+                        image=""
+                    />
+                    <Card
+                        title="minjiya"
+                        description="this website, showcasing the latest technologies, Next.js, Tailwind CSS, React, Go, Prisma"
+                        image=""
+                    />
+                </div>
             </div>
-            <footer className="py-4 text-center text-neutral-400">
-                <p>minjiya is not in any way affiliated with Tailwind CSS, Next.js, React, Go, Prisma or its creators.</p>
+            <footer className="py-4 text-center text-neutral-400 bg-neutral-800">
+                <p>
+                    minjiya is not in any way affiliated with Tailwind CSS,
+                    Next.js, React, Go, Prisma or its creators.
+                </p>
             </footer>
         </>
-    )
+    );
 }
