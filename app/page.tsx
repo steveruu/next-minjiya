@@ -3,10 +3,10 @@ import Image from "next/image";
 
 export default function Home() {
     return (
-        <div className="flex min-h-screen w-screen flex-col bg-[#161729]">
+        <div className="flex min-h-screen w-screen flex-col bg-[#161729] ">
             <Header />
-            <div className="flex flex-col xl:flex-row items-center">
-                <div className="flex flex-col items-center mx-auto my-10 md:my-20 w-[50%] max-w-md md:py-8">
+            <div className="flex flex-col gap-10 xl:flex-row xl:gap-0 mx-auto my-10 xl:my-20 w-full max-w-[1700px]">
+                <div className="flex flex-col items-center justify-center xl:w-[50%] ">
                     <Image
                         src="mt.svg"
                         className="inline"
@@ -21,7 +21,7 @@ export default function Home() {
                         shaping the future
                     </h3>
                 </div>
-                <div className="w-[100%] md:w-[50%] flex justify-center">
+                <div className="w-[100%] xl:w-[50%] flex justify-center">
                     <pre className="mx-4 overflow-y-auto md:overflow-visible md:flex-nowrap bg-neutral-950 py-2 px-4 rounded-xl">
                         <code className="md:block text-xs md:text-base text-white ">
                             <span style={{ color: "#569CD6" }}>import</span> React <span style={{ color: "#569CD6" }}>from</span> <span style={{ color: "#CE9178" }}>'react'</span>;
@@ -58,6 +58,6 @@ export default function Home() {
                     </pre>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
