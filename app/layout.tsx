@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/react"
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -41,6 +42,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="zxx">
+      <Analytics />
       <body
         className={`antialiased flex place-items-center h-dvh text-center bg-[#161729]`}
       >
