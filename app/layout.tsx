@@ -42,10 +42,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="zxx">
-      <Analytics />
       <body
         className={`antialiased flex place-items-center h-dvh text-center bg-[#161729]`}
       >
+        <Analytics />
         {children}
       </body>
     </html>
