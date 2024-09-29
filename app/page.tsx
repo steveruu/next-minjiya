@@ -1,11 +1,13 @@
 import Header from "@/components/Header";
+import CodePreview from "@/components/CodePreview";
 import Image from "next/image";
+import { FaArrowDown } from "react-icons/fa6";
 
 export default function Home() {
     return (
         <div className="flex min-h-screen w-screen flex-col bg-[#161729] ">
             <Header />
-            <div className="flex flex-col gap-10 xl:flex-row xl:gap-0 mx-auto my-10 xl:my-20 w-full max-w-[1700px]">
+            <div className="flex flex-col gap-10 xl:flex-row xl:gap-0 mx-auto my-10 xl:my-[8rem] w-full max-w-[1700px]">
                 <div className="flex flex-col items-center justify-center xl:w-[50%] ">
                     <Image
                         src="mt.svg"
@@ -21,42 +23,11 @@ export default function Home() {
                         shaping the future
                     </h3>
                 </div>
-                <div className="w-[100%] xl:w-[50%] flex justify-center">
-                    <pre className="mx-4 overflow-y-auto md:overflow-visible md:flex-nowrap bg-neutral-950 py-2 px-4 rounded-xl">
-                        <code className="md:block text-xs md:text-base text-white ">
-                            <span style={{ color: "#569CD6" }}>import</span> React <span style={{ color: "#569CD6" }}>from</span> <span style={{ color: "#CE9178" }}>'react'</span>;
-                            <br />
-                            <span style={{ color: "#569CD6" }}>import</span> Head <span style={{ color: "#569CD6" }}>from</span> <span style={{ color: "#CE9178" }}>'next/head'</span>;
-                            <br />
-                            <br />
-                            <span style={{ color: "#569CD6" }}>export default function</span> <span style={{ color: "#ffffff" }}>Home</span>() {"{"}
-                            <br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;<span style={{ color: "#569CD6" }}>return</span> (
-                            <br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style={{ color: "#CC5656" }}>&lt;div&gt;</span>
-                            <br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style={{ color: "#CC5656" }}>&lt;Head&gt;</span>
-                            <br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style={{ color: "#CC5656" }}>&lt;title&gt;</span><span style={{ color: "#ffffff" }}>My Next.js App</span><span style={{ color: "#CC5656" }}>&lt;/title&gt;</span>
-                            <br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style={{ color: "#CC5656" }}>&lt;/Head&gt;</span>
-                            <br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style={{ color: "#CC5656" }}>&lt;main&gt;</span>
-                            <br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style={{ color: "#CC5656" }}>&lt;h1&gt;</span><span style={{ color: "#ffffff" }}>Welcome to My Next.js App</span><span style={{ color: "#CC5656" }}>&lt;/h1&gt;</span>
-                            <br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style={{ color: "#CC5656" }}>&lt;p&gt;</span><span style={{ color: "#ffffff" }}>This is a sample Next.js application.</span><span style={{ color: "#CC5656" }}>&lt;/p&gt;</span>
-                            <br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style={{ color: "#CC5656" }}>&lt;/main&gt;</span>
-                            <br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style={{ color: "#CC5656" }}>&lt;/div&gt;</span>
-                            <br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;);
-                            <br />
-                            {"}"}
-                        </code>
-                    </pre>
-                </div>
+                <CodePreview />
+            </div>
+            <h4 className="mt-6 text-3xl font-[Rubik] font-medium tracking-wider text-center text-neutral-200">Creating websites using tools of the future</h4>
+            <div className="flex justify-center mt-5">
+                <a href="#technologies" className="p-5"><FaArrowDown className="text-3xl text-neutral-200 animate-bounce" /></a>
             </div>
         </div >
     )
