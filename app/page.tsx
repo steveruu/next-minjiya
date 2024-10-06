@@ -11,11 +11,11 @@ export default function CzechHome() {
         <>
             <div className="flex min-h-screen flex-col bg-minjiya overflow-x-hidden">
                 <Header czech={true} />
-                <div className="flex flex-col gap-10 xl:flex-row xl:gap-0 mx-auto mt-10 xl:mt-[12rem] xl:mb-[10rem] w-full max-w-[1700px]">
+                <div className="flex flex-col gap-10 xl:flex-row xl:gap-0 mx-auto mt-[6rem] xl:mt-[12rem] xl:mb-[10rem] w-full max-w-[1700px]">
                     <div className="flex flex-col items-center justify-center xl:w-[50%] ">
                         <Image
                             src="mt.svg"
-                            className="inline"
+                            className="inline hover:animate-spin"
                             alt="minjiya"
                             width={275}
                             height={148}
@@ -41,11 +41,11 @@ export default function CzechHome() {
             <div className="min-h-screen flex flex-col justify-around mt-10 gap-10 items-center overflow-x-hidden" id="technologies" >
                 <div>
                     <p
-                        className="text-center text-3xl font-semibold font-rubik"
+                        className="text-center text-xl sm:text-3xl font-semibold font-rubik"
                     >
                         pomocí{" "}
                         <span className="text-purpur">
-                            cutting edge technologií.
+                            cutting-edge technologií.
                         </span>
                     </p>
                     <Technologies />
