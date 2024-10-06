@@ -3,13 +3,13 @@ import CodePreview from "@/components/CodePreview";
 import Technologies from "@/components/Technologies";
 import Image from "next/image";
 import QuoteCard from "@/components/QuoteCard";
-import { FaArrowDown, FaEnvelope, FaGithub, FaInstagram } from "react-icons/fa6";
+import { FaArrowDown } from "react-icons/fa6";
 
-export default function CzechHome() {
+export default function Home() {
     return (
         <>
             <div className="flex min-h-screen flex-col bg-minjiya overflow-x-hidden">
-                <Header czech={true} />
+                <Header />
                 <div className="flex flex-col gap-10 xl:flex-row xl:gap-0 mx-auto mt-10 xl:mt-[12rem] xl:mb-[10rem] w-full max-w-[1700px]">
                     <div className="flex flex-col items-center justify-center xl:w-[50%] ">
                         <Image
@@ -29,7 +29,7 @@ export default function CzechHome() {
                     <CodePreview />
                 </div>
                 <h3 className="m-10 xl:m-0 text-3xl font-rubik font-medium tracking-wider text-center text-neutral-100">
-                    Tvoříme <span className="text-purpur">budoucnost</span>
+                    shaping the <span className="text-purpur">future</span>
                 </h3>
                 <div className="flex justify-center mt-5">
                     <a href="#technologies" className="p-5">
@@ -42,9 +42,9 @@ export default function CzechHome() {
                     <p
                         className="text-center text-3xl font-semibold font-rubik"
                     >
-                        pomocí{" "}
+                        using{" "}
                         <span className="text-purpur">
-                            cutting edge technologií.
+                            cutting edge technologies.
                         </span>
                     </p>
                     <Technologies />
@@ -54,7 +54,7 @@ export default function CzechHome() {
                         id="references"
                         className="pt-10 text-center text-3xl font-semibold font-rubik"
                     >
-                        Naše reference
+                        our references
                     </p>
                     <div className="flex flex-row flex-wrap gap-4 mt-10 justify-center items-center max-w-[80%] mx-auto">
                         <QuoteCard author="Dollar Prync" quote="Sleduj malá Minjiyo, sleduj teď" authorImage="https://eventigo.s3-central.vshosting.cloud/production/artist/dollar-prync-generace-rap-kopie-jpg-zjekmo.jpeg" />
@@ -66,38 +66,19 @@ export default function CzechHome() {
             <div className="min-h-screen bg-minjiya flex flex-col justify-around items-center" id="contact-us">
                 <div>
                     <p className="text-4xl text-center font-rubik font-bold text-white">
-                        Kontaktujte nás
+                        contact us
                     </p>
-                    <p className="text-xl text-center text-neutral-400 font-rubik">
-                        Máte otázku? Chcete s námi pracovat? Dejte nám vědět!
+                    <p className="text-center text-neutral-400 font-rubik ">
+                        have a question? want to work with us? let us know!
                     </p>
-                    <div className="flex flex-row flex-wrap gap-4 mt-10 justify-center items-center font-rubik text-md">
-                        <a
-                            href="mailto:inquiries@minjiya.com" className="text-neutral-500 hover:text-white inline-flex items-center gap-1 transition-colors"
-                        >
-                            <FaEnvelope /> email
-                        </a>
-                        <a
-                            href="https://instagram.com/minjiyalabs" className="text-neutral-500 hover:text-white inline-flex items-center gap-1 transition-colors"
-                        >
-                            <FaInstagram /> instagram
-                        </a>
-                        <a
-                            href="https://instagram.com/minjiyalabs" className="text-neutral-500 hover:text-white inline-flex items-center gap-1 transition-colors"
-                        >
-                            <FaGithub /> github
-                        </a>
-
-                    </div>
                 </div>
             </div>
             <footer className="py-4 text-center text-neutral-400 bg-neutral-800">
                 <p>
-                    minjiya není žádným způsobem spojena s Tailwind CSS,
-                    Next.js, React, Go, Prisma, Expo či jejich vývojáři.
+                    minjiya is not in any way affiliated with Tailwind CSS,
+                    Next.js, React, Go, Prisma, Expo or its creators.
                 </p>
             </footer>
         </>
     );
-
 }
