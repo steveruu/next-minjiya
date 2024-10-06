@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import CodePreview from "@/components/CodePreview";
 import Technologies from "@/components/Technologies";
 import Image from "next/image";
-import Card from "@/components/Card";
+import QuoteCard from "@/components/QuoteCard";
 import { FaArrowDown } from "react-icons/fa6";
 
 export default function Home() {
@@ -37,7 +37,7 @@ export default function Home() {
                     </a>
                 </div>
             </div>
-            <div className="min-h-screen mt-10">
+            <div className="min-h-screen mt-10 overflow-x-hidden" >
                 <p
                     id="technologies"
                     className="pt-10 text-center text-3xl font-semibold font-rubik"
@@ -52,26 +52,19 @@ export default function Home() {
                     id="references"
                     className="pt-10 text-center text-3xl font-semibold font-rubik"
                 >
-                    our projects
+                    our references
                 </p>
-                <div className="flex flex-row flex-wrap justify-around items-center max-w-[500px]">
-                    <Card
-                        title="Millers Oils"
-                        description="complete website redesign & backend rewrite, Stripe as payment
-                            provider, Prisma as database provider, Next.js as frontend"
-                        image=""
-                    />
-                    <Card
-                        title="minjiya"
-                        description="this website, showcasing the latest technologies, Next.js, Tailwind CSS, React, Go, Prisma"
-                        image=""
-                    />
+                <div className="flex flex-row flex-wrap gap-4 mt-10 justify-center items-center max-w-[1024px] mx-auto">
+                    <QuoteCard author="Dollar Prync" quote="Sleduj malá Minjiyo, sleduj teď" authorImage="https://eventigo.s3-central.vshosting.cloud/production/artist/dollar-prync-generace-rap-kopie-jpg-zjekmo.jpeg" />
+                    <QuoteCard author="Sergei Barracuda" quote="Budu v NHčku jak Minjiya chcípat na bolesti zad" authorImage="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBur3Y-4p-Z407ixxZWIvXa6sh6cRSMKsDG47gYL_PnnEZukeo" />
+                    <QuoteCard author="Dollar Prync" quote="Pojď sem baby, dělej tou Minjiyou teď a tady" authorImage="https://eventigo.s3-central.vshosting.cloud/production/artist/dollar-prync-generace-rap-kopie-jpg-zjekmo.jpeg" />
+
                 </div>
             </div>
             <footer className="py-4 text-center text-neutral-400 bg-neutral-800">
                 <p>
                     minjiya is not in any way affiliated with Tailwind CSS,
-                    Next.js, React, Go, Prisma or its creators.
+                    Next.js, React, Go, Prisma, Expo or its creators.
                 </p>
             </footer>
         </>
