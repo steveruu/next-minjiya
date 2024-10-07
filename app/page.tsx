@@ -3,7 +3,12 @@ import CodePreview from "@/components/CodePreview";
 import Technologies from "@/components/Technologies";
 import Image from "next/image";
 import QuoteCard from "@/components/QuoteCard";
-import { FaArrowDown, FaEnvelope, FaGithub, FaInstagram } from "react-icons/fa6";
+import {
+    FaArrowDown,
+    FaEnvelope,
+    FaGithub,
+    FaInstagram,
+} from "react-icons/fa6";
 import Form from "@/components/Form";
 
 export default function CzechHome() {
@@ -38,11 +43,12 @@ export default function CzechHome() {
                     </a>
                 </div>
             </div>
-            <div className="min-h-screen flex flex-col justify-around mt-10 gap-10 items-center overflow-x-hidden" id="technologies" >
+            <div
+                className="min-h-screen flex flex-col justify-around mt-10 gap-10 items-center overflow-x-hidden"
+                id="technologies"
+            >
                 <div>
-                    <p
-                        className="text-center text-xl sm:text-3xl font-semibold font-rubik"
-                    >
+                    <p className="text-center text-xl sm:text-3xl font-semibold font-rubik">
                         pomocí{" "}
                         <span className="text-purpur">
                             cutting-edge technologií.
@@ -58,13 +64,28 @@ export default function CzechHome() {
                         Naše reference
                     </p>
                     <div className="flex flex-row flex-wrap gap-4 mt-10 mb-10 justify-center items-center max-w-[80%] mx-auto">
-                        <QuoteCard author="Dollar Prync" quote="Sleduj malá Minjiyo, sleduj teď" authorImage="https://eventigo.s3-central.vshosting.cloud/production/artist/dollar-prync-generace-rap-kopie-jpg-zjekmo.jpeg" />
-                        <QuoteCard author="Sergei Barracuda" quote="Budu v enháčku jak Minjiya chcípat na bolesti zad" authorImage="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBur3Y-4p-Z407ixxZWIvXa6sh6cRSMKsDG47gYL_PnnEZukeo" />
-                        <QuoteCard author="Dollar Prync" quote="Pojď sem baby, dělej tou Minjiyou teď a tady" authorImage="https://eventigo.s3-central.vshosting.cloud/production/artist/dollar-prync-generace-rap-kopie-jpg-zjekmo.jpeg" />
+                        <QuoteCard
+                            author="Dollar Prync"
+                            quote="Sleduj malá Minjiyo, sleduj teď"
+                            authorImage="https://eventigo.s3-central.vshosting.cloud/production/artist/dollar-prync-generace-rap-kopie-jpg-zjekmo.jpeg"
+                        />
+                        <QuoteCard
+                            author="Sergei Barracuda"
+                            quote="Budu v enháčku jak Minjiya chcípat na bolesti zad"
+                            authorImage="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBur3Y-4p-Z407ixxZWIvXa6sh6cRSMKsDG47gYL_PnnEZukeo"
+                        />
+                        <QuoteCard
+                            author="Dollar Prync"
+                            quote="Pojď sem baby, dělej tou Minjiyou teď a tady"
+                            authorImage="https://eventigo.s3-central.vshosting.cloud/production/artist/dollar-prync-generace-rap-kopie-jpg-zjekmo.jpeg"
+                        />
                     </div>
                 </div>
             </div>
-            <div className="min-h-screen bg-minjiya flex flex-col justify-around items-center" id="contact-us">
+            <div
+                className="min-h-screen bg-minjiya flex flex-col justify-around items-center"
+                id="contact-us"
+            >
                 <div>
                     <p className="text-4xl text-center font-rubik font-bold text-white">
                         Kontaktujte nás
@@ -74,17 +95,20 @@ export default function CzechHome() {
                     </p>
                     <div className="flex flex-row flex-wrap gap-4 mt-5 justify-center items-center font-rubik text-md">
                         <a
-                            href="mailto:inquiries@minjiya.com" className="text-neutral-400 hover:text-white inline-flex items-center gap-1 transition-colors"
+                            href="mailto:inquiries@minjiya.com"
+                            className="text-neutral-400 hover:text-white inline-flex items-center gap-1 transition-colors"
                         >
                             <FaEnvelope /> email
                         </a>
                         <a
-                            href="https://instagram.com/minjiyalabs" className="text-neutral-400 hover:text-white inline-flex items-center gap-1 transition-colors"
+                            href="https://instagram.com/minjiyalabs"
+                            className="text-neutral-400 hover:text-white inline-flex items-center gap-1 transition-colors"
                         >
                             <FaInstagram /> instagram
                         </a>
                         <a
-                            href="https://github.com/minjiyalabs" className="text-neutral-400 hover:text-white inline-flex items-center gap-1 transition-colors"
+                            href="https://github.com/minjiyalabs"
+                            className="text-neutral-400 hover:text-white inline-flex items-center gap-1 transition-colors"
                         >
                             <FaGithub /> github
                         </a>
@@ -102,5 +126,4 @@ export default function CzechHome() {
             </footer>
         </>
     );
-
 }

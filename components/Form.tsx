@@ -1,11 +1,46 @@
-"use client"
-import { formHandle } from "@/lib/route"
-import { useFormState } from 'react-dom';
+"use client";
+import { formHandle } from "@/lib/route";
+import { useFormState } from "react-dom";
+import { useRef, useState } from "react";
+
+import ReCAPTCHA from "react-google-recaptcha";
 import { toast, Toaster } from "react-hot-toast";
 
 const Form = () => {
+    const recaptchaRef = useRef<ReCAPTCHA>(null);
+    const [isVerified, setIsVerified] = useState(false);
+
+    async function handleCaptchaSubmission(token: string | null) {
+        try {
+            if (token) {
+                await fetch("/api", {
+                    method: "POST",
+                    headers: {
+                        Accept: "application/json",
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({ token }),
+                });
+                setIsVerified(true);
+            }
+        } catch (e) {
+            setIsVerified(false);
+        }
+    }
+
+    const handleChange = (token: string | null) => {
+        handleCaptchaSubmission(token);
+    };
+
+    function handleExpired() {
+        setIsVerified(false);
+    }
+
     const [state, formAction] = useFormState(
-        (prevState: any, formData: FormData) => formHandle(prevState, formData),
+        (prevState: any, formData: FormData) => {
+            formData.append("isVerified", isVerified.toString());
+            return formHandle(prevState, formData);
+        },
         { status: 418, message: "🫖" }
     );
 
@@ -18,7 +53,7 @@ const Form = () => {
     return (
         <>
             <Toaster position="bottom-center" />
-            <form action={formAction}>
+            <form action={formAction} id="form">
                 <div className="flex flex-col gap-4 pt-8 font-rubik ">
                     <input
                         type="text"
@@ -43,16 +78,23 @@ const Form = () => {
                         id="text"
                         name="text"
                     />
+                    <ReCAPTCHA
+                        sitekey="6LcNXCcUAAAAAOsIMLoSI8IvJFc3z0iyiiCIEMuj"
+                        ref={recaptchaRef}
+                        onChange={handleChange}
+                        onExpired={handleExpired}
+                    />
                     <button
                         type="submit"
-                        className="p-2 border-purpur border-2 text-purpur rounded-md font-semibold "
+                        className="p-2 bg-purpur text-white rounded-md font-semibold disabled:bg-purple-300"
+                        disabled={!isVerified}
                     >
-                        Odeslat PŘIDAT RECAPTCHA TODO
+                        Odeslat
                     </button>
-                </div >
-            </form >
+                </div>
+            </form>
         </>
-    )
-}
+    );
+};
 
-export default Form
+export default Form;

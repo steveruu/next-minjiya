@@ -58,9 +58,12 @@ export async function formHandle(prevState: any, formD: FormData) {
         email: formD.get("email") ?? "",
         userFirstName: formD.get("userFirstName") ?? "",
         text: formD.get("text") ?? "",
+        isVerified: formD.get("isVerified") ?? "",
     };
 
-    if (
+    if (data.isVerified == "false") {
+        return { status: 400, message: "Please verify that you are human." };
+    } else if (
         isInvalid(data.email, 40) ||
         isInvalid(data.userFirstName, 40) ||
         isInvalid(data.text, 1500) ||
