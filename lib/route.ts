@@ -71,7 +71,7 @@ export async function formHandle(prevState: any, formD: FormData) {
     ) {
         return { status: 400, message: "Vyplňte všechna pole správně!" };
     } else {
-        // await resend_email_send(data)
+        await resend_email_send(data);
         console.log(data);
         return { status: 200, message: "Zpráva byla úspěšně odeslána!" };
     }

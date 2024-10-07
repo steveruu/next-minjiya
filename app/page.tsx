@@ -15,7 +15,7 @@ export default function CzechHome() {
     return (
         <>
             <div className="flex min-h-screen flex-col bg-minjiya overflow-x-hidden">
-                <Header czech={true} />
+                <Header czech />
                 <div className="flex flex-col gap-10 xl:flex-row xl:gap-0 mx-auto mt-[6rem] xl:mt-[12rem] xl:mb-[10rem] w-full max-w-[1700px]">
                     <div className="flex flex-col items-center justify-center xl:w-[50%] ">
                         <Image
@@ -38,7 +38,7 @@ export default function CzechHome() {
                 </h3>
                 <div className="flex justify-center mt-5">
                     <a href="#technologies" className="p-5">
-                        <FaArrowDown className="text-3xl text-white animate-bounce" />
+                        <FaArrowDown className="text-3xl text-white animate-bounce mb-10 xl:mb-0" />
                     </a>
                 </div>
             </div>
@@ -113,7 +113,7 @@ export default function CzechHome() {
                         </a>
                     </div>
                     <div>
-                        <Form />
+                        <Form czech />
                     </div>
                 </div>
             </div>

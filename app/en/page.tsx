@@ -3,18 +3,23 @@ import CodePreview from "@/components/CodePreview";
 import Technologies from "@/components/Technologies";
 import Image from "next/image";
 import QuoteCard from "@/components/QuoteCard";
-import { FaArrowDown } from "react-icons/fa6";
+import {
+    FaArrowDown,
+    FaEnvelope,
+    FaGithub,
+    FaInstagram,
+} from "react-icons/fa6";
+import Form from "@/components/Form";
 
 export default function Home() {
     return (
         <>
             <div className="flex min-h-screen flex-col bg-minjiya overflow-x-hidden">
                 <Header />
-                <div className="flex flex-col gap-10 xl:flex-row xl:gap-0 mx-auto mt-10 xl:mt-[12rem] xl:mb-[10rem] w-full max-w-[1700px]">
+                <div className="flex flex-col gap-10 xl:flex-row xl:gap-0 mx-auto mt-[6rem] xl:mt-[12rem] xl:mb-[10rem] w-full max-w-[1700px]">
                     <div className="flex flex-col items-center justify-center xl:w-[50%] ">
                         <Image
                             src="mt.svg"
-                            className="inline"
                             alt="minjiya"
                             width={275}
                             height={148}
@@ -33,7 +38,7 @@ export default function Home() {
                 </h3>
                 <div className="flex justify-center mt-5">
                     <a href="#technologies" className="p-5">
-                        <FaArrowDown className="text-3xl text-white animate-bounce" />
+                        <FaArrowDown className="text-3xl text-white animate-bounce mb-10 xl:mb-0" />
                     </a>
                 </div>
             </div>
@@ -71,6 +76,29 @@ export default function Home() {
                     <p className="text-center text-neutral-400 font-rubik ">
                         have a question? want to work with us? let us know!
                     </p>
+                    <div className="flex flex-row flex-wrap gap-4 mt-5 justify-center items-center font-rubik text-md">
+                        <a
+                            href="mailto:inquiries@minjiya.com"
+                            className="text-neutral-400 hover:text-white inline-flex items-center gap-1 transition-colors"
+                        >
+                            <FaEnvelope /> email
+                        </a>
+                        <a
+                            href="https://instagram.com/minjiyalabs"
+                            className="text-neutral-400 hover:text-white inline-flex items-center gap-1 transition-colors"
+                        >
+                            <FaInstagram /> instagram
+                        </a>
+                        <a
+                            href="https://github.com/minjiyalabs"
+                            className="text-neutral-400 hover:text-white inline-flex items-center gap-1 transition-colors"
+                        >
+                            <FaGithub /> github
+                        </a>
+                    </div>
+                    <div>
+                        <Form czech={false} />
+                    </div>
                 </div>
             </div>
             <footer className="py-4 text-center text-neutral-400 bg-neutral-800">

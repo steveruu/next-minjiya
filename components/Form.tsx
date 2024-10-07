@@ -6,7 +6,7 @@ import { useRef, useState, useEffect } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { toast, Toaster } from "react-hot-toast";
 
-const Form = () => {
+const Form = ({ czech }: { czech: boolean }) => {
     const recaptchaRef = useRef<ReCAPTCHA>(null);
     const formRef = useRef<HTMLFormElement>(null);
     const [isVerified, setIsVerified] = useState(false);
@@ -55,7 +55,7 @@ const Form = () => {
                         type="text"
                         id="userFirstName"
                         name="userFirstName"
-                        placeholder="Jméno"
+                        placeholder={czech ? "Jméno" : "Name"}
                         className="p-2 border-2 border-gray-300 rounded-md"
                         required
                     />
@@ -68,7 +68,7 @@ const Form = () => {
                         required
                     />
                     <textarea
-                        placeholder="Zpráva"
+                        placeholder={czech ? "Vaše zpráva" : "Your message"}
                         className="p-2 border-2 border-gray-300 rounded-md max-h-72"
                         required
                         id="text"
@@ -85,7 +85,7 @@ const Form = () => {
                         className="p-2 bg-purpur text-white rounded-md font-semibold disabled:bg-purple-300"
                         disabled={!isVerified}
                     >
-                        Odeslat
+                        {czech ? "Odeslat" : "Send"}
                     </button>
                 </div>
             </form>

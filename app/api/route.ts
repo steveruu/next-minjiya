@@ -4,7 +4,7 @@ export async function POST(req: Request) {
     if (req.method !== "POST") {
         return new Response(
             JSON.stringify({ message: "Only POST requests allowed" }),
-            { status: 420 }
+            { status: 405 }
         );
     }
 
@@ -14,7 +14,7 @@ export async function POST(req: Request) {
 
     if (!token) {
         return new Response(JSON.stringify({ message: "Token not found" }), {
-            status: 420,
+            status: 401,
         });
     }
 
@@ -31,7 +31,7 @@ export async function POST(req: Request) {
             return new Response(
                 JSON.stringify({ message: "Failed to verify" }),
                 {
-                    status: 420,
+                    status: 403,
                 }
             );
         }
