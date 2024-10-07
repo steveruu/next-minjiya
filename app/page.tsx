@@ -23,6 +23,7 @@ export default function CzechHome() {
                             alt="minjiya"
                             width={275}
                             height={148}
+                            draggable={false}
                         />
                         <h1 className="text-3xl mt-8 mb-2 leading-[1.1] font-rubik font-bold text-white">
                             minjiya

@@ -1,8 +1,9 @@
 export default function CodePreview() {
     return (
         <div className="w-[100%] xl:w-[50%] flex justify-center">
-            <pre className="mx-4 overflow-y-auto md:overflow-visible md:flex-nowrap bg-neutral-950 py-2 pl-4 pr-6 rounded-xl">
-                <code className="md:block text-xs md:text-base text-white ">
+            <pre className="mx-4 overflow-y-auto md:overflow-visible md:flex-nowrap bg-neutral-950 rounded-xl ">
+                <span className="block text-center font-rubik text-zinc-200 text-sm bg-zinc-800 w-full rounded-tl-xl rounded-tr-xl py-2">page.tsx</span>
+                <code className="md:block text-xs md:text-base text-white py-3 pl-4 pr-6">
                     <span className="text-[#569CD6]">import</span> React <span className="text-[#569CD6]">from</span> <span className="text-[#CE9178]">'react'</span>;
                     <br />
                     <br />
