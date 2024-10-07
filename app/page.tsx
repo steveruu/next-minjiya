@@ -97,18 +97,21 @@ export default function CzechHome() {
                         <a
                             href="mailto:inquiries@minjiya.com"
                             className="text-neutral-400 hover:text-white inline-flex items-center gap-1 transition-colors"
+                            target="_blank"
                         >
                             <FaEnvelope /> email
                         </a>
                         <a
                             href="https://instagram.com/minjiyalabs"
                             className="text-neutral-400 hover:text-white inline-flex items-center gap-1 transition-colors"
+                            target="_blank"
                         >
                             <FaInstagram /> instagram
                         </a>
                         <a
                             href="https://github.com/minjiyalabs"
                             className="text-neutral-400 hover:text-white inline-flex items-center gap-1 transition-colors"
+                            target="_blank"
                         >
                             <FaGithub /> github
                         </a>
