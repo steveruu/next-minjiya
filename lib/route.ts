@@ -62,7 +62,7 @@ export async function formHandle(prevState: any, formD: FormData) {
     };
 
     if (data.isVerified == "false") {
-        return { status: 400, message: "Please verify that you are human." };
+        return { status: 400, message: "Prosím, ověřte, že nejste robot." };
     } else if (
         isInvalid(data.email, 40) ||
         isInvalid(data.userFirstName, 40) ||
@@ -72,6 +72,7 @@ export async function formHandle(prevState: any, formD: FormData) {
         return { status: 400, message: "Vyplňte všechna pole správně!" };
     } else {
         // await resend_email_send(data)
+        console.log(data);
         return { status: 200, message: "Zpráva byla úspěšně odeslána!" };
     }
 }

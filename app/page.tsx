@@ -20,7 +20,6 @@ export default function CzechHome() {
                     <div className="flex flex-col items-center justify-center xl:w-[50%] ">
                         <Image
                             src="mt.svg"
-                            className="inline hover:animate-spin"
                             alt="minjiya"
                             width={275}
                             height={148}
@@ -83,7 +82,7 @@ export default function CzechHome() {
                 </div>
             </div>
             <div
-                className="min-h-screen bg-minjiya flex flex-col justify-around items-center"
+                className="min-h-screen bg-minjiya flex flex-col justify-around items-center px-4"
                 id="contact-us"
             >
                 <div>

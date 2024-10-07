@@ -1,13 +1,14 @@
 "use client";
 import { formHandle } from "@/lib/route";
 import { useFormState } from "react-dom";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 
 import ReCAPTCHA from "react-google-recaptcha";
 import { toast, Toaster } from "react-hot-toast";
 
 const Form = () => {
     const recaptchaRef = useRef<ReCAPTCHA>(null);
+    const formRef = useRef<HTMLFormElement>(null);
     const [isVerified, setIsVerified] = useState(false);
 
     async function handleCaptchaSubmission(token: string | null) {
@@ -28,14 +29,6 @@ const Form = () => {
         }
     }
 
-    const handleChange = (token: string | null) => {
-        handleCaptchaSubmission(token);
-    };
-
-    function handleExpired() {
-        setIsVerified(false);
-    }
-
     const [state, formAction] = useFormState(
         (prevState: any, formData: FormData) => {
             formData.append("isVerified", isVerified.toString());
@@ -44,16 +37,19 @@ const Form = () => {
         { status: 418, message: "🫖" }
     );
 
-    if (state.status === 200) {
-        toast.success(state.message);
-    } else if (state.status == 400 || state.status == 429) {
-        toast.error(state.message);
-    }
+    useEffect(() => {
+        if (state.status === 200) {
+            toast.success(state.message);
+            formRef.current?.reset();
+        } else if (state.status == 400 || state.status == 429) {
+            toast.error(state.message);
+        }
+    }, [state]);
 
     return (
         <>
             <Toaster position="bottom-center" />
-            <form action={formAction} id="form">
+            <form action={formAction} ref={formRef} id="form">
                 <div className="flex flex-col gap-4 pt-8 font-rubik ">
                     <input
                         type="text"
@@ -81,8 +77,8 @@ const Form = () => {
                     <ReCAPTCHA
                         sitekey="6LcNXCcUAAAAAOsIMLoSI8IvJFc3z0iyiiCIEMuj"
                         ref={recaptchaRef}
-                        onChange={handleChange}
-                        onExpired={handleExpired}
+                        onChange={handleCaptchaSubmission}
+                        onExpired={() => { setIsVerified(false); }}
                     />
                     <button
                         type="submit"
