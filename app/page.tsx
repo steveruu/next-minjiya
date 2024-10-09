@@ -14,6 +14,7 @@ export default function Home() {
                     alt="minjiya"
                     width={275}
                     height={148}
+                    loading="eager"
                 />
                 <h1 className="text-5xl my-8 font-[Stick] leading-[1.1] text-white">
                     みんじや
