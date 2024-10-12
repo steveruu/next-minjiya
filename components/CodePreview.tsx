@@ -5,9 +5,7 @@ export default function CodePreview() {
                 <span className="block text-center font-rubik text-zinc-200 text-sm bg-zinc-800 w-full rounded-tl-xl rounded-tr-xl py-2">
                     page.tsx
                 </span>
-                <code className="md:block text-xs md:text-base text-white py-3 pl-4 pr-6 max-w-[700px] overflow-x-scroll">
-                    <span className="text-white">"use server";</span>
-                    <br />
+                <code className="md:block text-xs md:text-base text-white py-3 pl-4 pr-4 max-w-[700px] ">
                     <span className="text-[#569CD6]">import</span>{" "}
                     <span className="text-white">Header</span>{" "}
                     <span className="text-[#569CD6]">from</span>{" "}

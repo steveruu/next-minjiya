@@ -2,7 +2,6 @@ import Header from "@/components/Header";
 import CodePreview from "@/components/CodePreview";
 import Technologies from "@/components/Technologies";
 import Image from "next/image";
-import QuoteCard from "@/components/QuoteCard";
 import {
     FaArrowDown,
     FaEnvelope,
@@ -57,31 +56,7 @@ export default function CzechHome() {
                     </p>
                     <Technologies />
                 </div>
-                <div className="w-full">
-                    <p
-                        id="references"
-                        className="pt-10 text-center text-3xl font-semibold font-rubik"
-                    >
-                        Naše reference
-                    </p>
-                    <div className="flex flex-row flex-wrap gap-4 mt-10 mb-10 justify-center items-center max-w-[80%] mx-auto">
-                        <QuoteCard
-                            author="Dollar Prync"
-                            quote="Sleduj malá Minjiyo, sleduj teď"
-                            authorImage="https://eventigo.s3-central.vshosting.cloud/production/artist/dollar-prync-generace-rap-kopie-jpg-zjekmo.jpeg"
-                        />
-                        <QuoteCard
-                            author="Sergei Barracuda"
-                            quote="Budu v enháčku jak Minjiya chcípat na bolesti zad"
-                            authorImage="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBur3Y-4p-Z407ixxZWIvXa6sh6cRSMKsDG47gYL_PnnEZukeo"
-                        />
-                        <QuoteCard
-                            author="Dollar Prync"
-                            quote="Pojď sem baby, dělej tou Minjiyou teď a tady"
-                            authorImage="https://eventigo.s3-central.vshosting.cloud/production/artist/dollar-prync-generace-rap-kopie-jpg-zjekmo.jpeg"
-                        />
-                    </div>
-                </div>
+
             </div>
             <div
                 className="min-h-screen bg-minjiya flex flex-col justify-around items-center px-4"
