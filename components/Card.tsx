@@ -1,5 +1,5 @@
 import { MdDoNotDisturbAlt } from "react-icons/md";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 export default function Card({
     title,
@@ -9,7 +9,7 @@ export default function Card({
 }: {
     title: string;
     description: string;
-    image: string;
+    image: StaticImageData;
     link: string | null;
 }) {
     return (
