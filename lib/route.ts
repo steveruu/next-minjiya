@@ -37,7 +37,10 @@ const RATE_LIMIT = 3;
 const TIME_WINDOW = 60 * 1000; // 3 za minutu
 let firstRequestTime = Date.now();
 
-export async function formHandle(prevState: any, formD: FormData) {
+export async function formHandle(
+    prevState: { status: number; message: string },
+    formD: FormData
+) {
     const currentTime = Date.now();
 
     if (currentTime - firstRequestTime > TIME_WINDOW) {

@@ -24,13 +24,13 @@ const Form = ({ czech }: { czech: boolean }) => {
                 });
                 setIsVerified(true);
             }
-        } catch (e) {
+        } catch {
             setIsVerified(false);
         }
     }
 
     const [state, formAction] = useFormState(
-        (prevState: any, formData: FormData) => {
+        (prevState: { status: number, message: string }, formData: FormData) => {
             formData.append("isVerified", isVerified.toString());
             return formHandle(prevState, formData);
         },

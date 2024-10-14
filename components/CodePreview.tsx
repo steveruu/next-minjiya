@@ -9,7 +9,7 @@ export default function CodePreview() {
                     <span className="text-[#569CD6]">import</span>{" "}
                     <span className="text-white">Header</span>{" "}
                     <span className="text-[#569CD6]">from</span>{" "}
-                    <span className="text-white">"@/components/Header"</span>;
+                    <span className="text-white">&quot;@/components/Header&quot;</span>;
                     <br />
                     <br />
                     <span className="text-[#569CD6]">
@@ -22,7 +22,7 @@ export default function CodePreview() {
                     <span className="text-[#CC5656]">&lt;div</span>{" "}
                     <span className="text-yellow-400">className</span>=
                     <span className="text-green-300">
-                        "min-h-screen flex flex-col justify-center items-center"
+                        &quot;min-h-screen flex flex-col justify-center items-center&quot;
                     </span>
                     <span className="text-[#CC5656]">&gt;</span>
                     <br />
@@ -32,14 +32,14 @@ export default function CodePreview() {
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <span className="text-[#CC5656]">&lt;main</span>{" "}
                     <span className="text-yellow-400">className</span>=
-                    <span className="text-green-300">"text-center px-4"</span>
+                    <span className="text-green-300">&quot;text-center px-4&quot;</span>
                     <span className="text-[#CC5656]">&gt;</span>
                     <br />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <span className="text-[#CC5656]">&lt;h1</span>{" "}
                     <span className="text-yellow-400">className</span>=
                     <span className="text-green-300">
-                        "text-5xl font-bold text-gray-800 mb-4"
+                        &quot;text-5xl font-bold text-gray-800 mb-4&quot;
                     </span>
                     <span className="text-[#CC5656]">&gt;</span>
                     <span className="text-white">minjiya</span>
@@ -48,7 +48,7 @@ export default function CodePreview() {
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <span className="text-[#CC5656]">&lt;p</span>{" "}
                     <span className="text-yellow-400">className</span>=
-                    <span className="text-green-300">"text-xl"</span>
+                    <span className="text-green-300">&quot;text-xl&quot;</span>
                     <span className="text-[#CC5656]">&gt;</span>
                     <span className="text-white">
                         shaping the future with Next.js & React
