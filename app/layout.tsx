@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react"
 import "./globals.css";
-import { Analytics } from "@vercel/analytics/react"
 import { Inter } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] });
@@ -52,7 +51,6 @@ export default function RootLayout({
         <Analytics />
         {children}
       </body>
-
     </html >
   );
 }
