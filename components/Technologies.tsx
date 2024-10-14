@@ -38,7 +38,7 @@ export default function Technologies() {
     }, []);
 
     return (
-        <div className="flex flex-row mt-8 gap-16 mx-auto w-fit mb-20 animate-marquee">
+        <div className="flex flex-row mt-8 gap-10 md:gap-16 mx-auto w-fit mb-20 animate-marquee2 md:animate-marquee">
             {logos.map((logo, index) => (
                 <Image
                     key={index}

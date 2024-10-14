@@ -68,7 +68,7 @@ export default function CzechHome() {
                         Kontaktujte nás
                     </p>
                     <p className="text-xl mt-1 text-center text-neutral-400 font-rubik">
-                        Máte otázku? Chcete s námi pracovat? Dejte nám vědět!
+                        Máte otázky nebo zájem o spolupráci? Neváhejte se nám ozvat!
                     </p>
                     <div className="flex flex-row flex-wrap gap-4 mt-5 justify-center items-center font-rubik text-md">
                         <a
@@ -76,21 +76,21 @@ export default function CzechHome() {
                             className="text-neutral-400 hover:text-white inline-flex items-center gap-1 transition-colors"
                             target="_blank"
                         >
-                            <FaEnvelope /> email
+                            <FaEnvelope /> Email
                         </a>
                         <a
                             href="https://instagram.com/minjiyalabs"
                             className="text-neutral-400 hover:text-white inline-flex items-center gap-1 transition-colors"
                             target="_blank"
                         >
-                            <FaInstagram /> instagram
+                            <FaInstagram /> Instagram
                         </a>
                         <a
                             href="https://github.com/minjiyalabs"
                             className="text-neutral-400 hover:text-white inline-flex items-center gap-1 transition-colors"
                             target="_blank"
                         >
-                            <FaGithub /> github
+                            <FaGithub /> GitHub
                         </a>
                     </div>
                     <div>
@@ -98,10 +98,10 @@ export default function CzechHome() {
                     </div>
                 </div>
             </div>
-            <footer className="py-4 text-center text-neutral-400 bg-neutral-800">
+            <footer className="py-4 px-4 text-center text-neutral-400 bg-neutral-800">
                 <p>
-                    minjiya není žádným způsobem spojena s Tailwind CSS,
-                    Next.js, React, Go, Prisma, Expo či jejich vývojáři.
+                    minjiya není nijak spojena s Tailwind CSS,
+                    Next.js, React, Go, TypeScript, Prisma, Expo či jejich vývojáři. Všechny obchodní značky a ochranné známky jsou vlastnictvím jejich příslušných vlastníků.
                 </p>
             </footer>
         </>

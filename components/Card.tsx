@@ -55,7 +55,7 @@ export default function Card({
                     </a>
                 ) : (
                     <a className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-gray-300 rounded-lg cursor-not-allowed ">
-                        Web stále ve vývoji{" "}
+                        Stále ve vývoji{" "}
                         {<MdDoNotDisturbAlt className="ms-1" />}
                     </a>
                 )}
