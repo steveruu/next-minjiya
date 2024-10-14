@@ -1,11 +1,11 @@
 export default function CodePreview() {
     return (
-        <div className="w-[100%] xl:w-[50%] flex justify-center">
-            <pre className="mx-4 overflow-y-auto md:overflow-visible md:flex-nowrap bg-zinc-950 rounded-xl shadow-xl">
-                <span className="block text-center font-rubik text-zinc-200 text-sm bg-zinc-800 w-full rounded-tl-xl rounded-tr-xl py-2">
-                    page.tsx
-                </span>
-                <code className="md:block text-xs md:text-base text-white py-3 pl-4 pr-4 max-w-[700px] ">
+        <div className="w-full min-[552px]:w-fit min-[552px]:mx-auto">
+            <span className="block text-center font-rubik text-zinc-200 text-sm bg-zinc-800 rounded-tl-xl rounded-tr-xl py-2 mx-4 ">
+                page.tsx
+            </span>
+            <pre className="mx-4 px-2 overflow-x-scroll overflow-y-hidden md:overflow-visible md:flex-nowrap bg-zinc-950 rounded-bl-xl rounded-br-xl shadow-xl">
+                <code className="block text-xs md:text-base text-white py-2 md:pl-4 md:pr-4 max-w-[700px] ">
                     <span className="text-[#569CD6]">import</span>{" "}
                     <span className="text-white">Header</span>{" "}
                     <span className="text-[#569CD6]">from</span>{" "}

@@ -16,7 +16,7 @@ export default function CzechHome() {
         <>
             <div className="flex min-h-screen flex-col bg-minjiya overflow-x-hidden">
                 <Header czech />
-                <div className="flex flex-col gap-10 xl:flex-row xl:gap-0 mx-auto mt-[6rem] xl:mt-[12rem] xl:mb-[10rem] w-full max-w-[1700px]">
+                <div className="flex flex-col gap-10 xl:flex-row xl:gap-0 mx-auto mt-[4rem] xl:mt-[12rem] xl:mb-[10rem] w-full max-w-[1700px]">
                     <div className="flex flex-col items-center justify-center xl:w-[50%] ">
                         <Image
                             src="mt.svg"
@@ -29,13 +29,13 @@ export default function CzechHome() {
                         <h1 className="text-3xl mt-8 mb-2 leading-[1.1] font-rubik font-bold text-white">
                             minjiya
                         </h1>
-                        <h2 className="md:text-xl tracking-wider font-stick text-neutral-400">
+                        <h2 className="hidden md:inline md:text-xl tracking-wider font-stick text-neutral-400">
                             みんじや
                         </h2>
                     </div>
                     <CodePreview />
                 </div>
-                <h3 className="m-10 xl:m-0 text-3xl font-rubik font-medium tracking-wider text-center text-neutral-100">
+                <h3 className="mt-12 md:mb-10 xl:m-0 text-3xl font-rubik font-medium tracking-wider text-center text-neutral-100">
                     Tvoříme <span className="text-purpur">budoucnost</span>
                 </h3>
                 <div className="flex justify-center mt-5">
