@@ -19,7 +19,7 @@ export default function Header({ ...props }) {
                     {props.czech ? "technologie" : "technologies"}
                 </Link>
                 <Link
-                    href="#project"
+                    href="#projects"
                     className="hidden md:inline text-neutral-400 transition-colors hover:text-white"
                 >
                     {props.czech ? "naše projekty" : "our projects"}

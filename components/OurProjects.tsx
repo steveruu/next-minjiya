@@ -1,12 +1,13 @@
 import Card from "@/components/Card";
 
-import union from "@/public/images/uniON2.png";
+import union from "@/public/images/union.png";
+import millers from "@/public/images/millers.png";
 
 export default function OurProjects() {
     return (
         <div className="w-full">
             <p
-                id="project"
+                id="projects"
                 className="pt-10 text-center text-3xl font-semibold font-rubik"
             >
                 Naše projekty
@@ -21,7 +22,7 @@ export default function OurProjects() {
                 <Card
                     title="Millers Oils"
                     description="Online e-shop pro prodej olejů a maziv, postavený pomocí Reactu a Next.js. V současné době ve vývoji."
-                    image={union}
+                    image={millers}
                     link={null}
                 />
                 <Card
@@ -30,6 +31,7 @@ export default function OurProjects() {
                     image={union}
                     link={null}
                 />
+
             </div>
         </div>
     );

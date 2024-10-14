@@ -45,7 +45,7 @@ export default function CzechHome() {
                 </div>
             </div>
             <div
-                className="min-h-screen flex flex-col justify-around mt-10 gap-10 items-center overflow-x-hidden"
+                className="min-h-screen flex flex-col justify-around mt-12 mb-12 gap-10 items-center overflow-x-hidden"
                 id="technologies"
             >
                 <div>
