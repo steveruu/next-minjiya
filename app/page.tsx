@@ -9,6 +9,7 @@ import {
     FaInstagram,
 } from "react-icons/fa6";
 import Form from "@/components/Form";
+import OurProjects from "@/components/OurProjects";
 
 export default function CzechHome() {
     return (
@@ -56,7 +57,7 @@ export default function CzechHome() {
                     </p>
                     <Technologies />
                 </div>
-
+                <OurProjects />
             </div>
             <div
                 className="min-h-screen bg-minjiya flex flex-col justify-around items-center px-4"
