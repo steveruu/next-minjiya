@@ -1,15 +1,18 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react"
 import "./globals.css";
+import { Inter } from 'next/font/google'
+
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: "minjiya",
-  description: 'shaping the future',
+  description: 'tvoříme webové a mobilní aplikace budoucnosti',
   openGraph: {
     type: 'website',
     url: "https://minjiya.com",
     title: "minjiya",
-    description: 'shaping the future',
+    description: 'tvoříme webové a mobilní aplikace budoucnosti',
     siteName: "minjiya",
     images: [
       {
@@ -23,7 +26,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: "minjiya",
-    description: 'shaping the future',
+    description: 'tvoříme webové a mobilní aplikace budoucnosti',
     images: [
       {
         url: "https://minjiya.com/mt.png",
@@ -41,13 +44,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="zxx">
+    <html lang="en" className="scroll-smooth">
       <body
-        className={`antialiased flex place-items-center h-dvh text-center bg-[#161729]`}
+        className={inter.className}
       >
         <Analytics />
         {children}
       </body>
-    </html>
+    </html >
   );
 }
