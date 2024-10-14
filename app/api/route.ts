@@ -35,7 +35,7 @@ export async function POST(req: Request) {
                 }
             );
         }
-    } catch (error) {
+    } catch {
         return new Response(
             JSON.stringify({ message: "Internal Server Error" }),
             {
