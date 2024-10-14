@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/react"
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react"
 import { Inter } from 'next/font/google'
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
     url: "https://minjiya.com",
     title: "minjiya",
     description: 'tvoříme webové a mobilní aplikace budoucnosti',
+    siteName: "minjiya",
     images: [
       {
         url: "https://minjiya.com/mt.png",
