@@ -1,4 +1,3 @@
-"use client";
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
 
@@ -14,7 +13,7 @@ export default function Technologies() {
     ];
 
     return (
-        <div className="flex flex-row mt-8 gap-10 md:gap-16 mx-auto w-fit mb-20 max-w-[1800px]">
+        <div className="max-w-[1800px]">
             <Marquee autoFill gradient gradientWidth={200} gradientColor="#fff" speed={50}>
                 {initialLogos.map((logo, index) => (
                     <Image
