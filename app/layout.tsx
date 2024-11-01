@@ -6,13 +6,15 @@ import { Inter } from 'next/font/google'
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://minjiya.com"),
+  keywords: ["minjiya", "web", "stránky", "vývoj", "mobilní aplikace", "aplikace", "vývoj stránek", "webové stránky", "redesign", "stránky budoucnosti", "budoucnost"],
   title: "minjiya",
-  description: 'tvoříme webové a mobilní aplikace budoucnosti',
+  description: 'Tvoříme webové a mobilní aplikace budoucnosti',
   openGraph: {
     type: 'website',
     url: "https://minjiya.com",
     title: "minjiya",
-    description: 'tvoříme webové a mobilní aplikace budoucnosti',
+    description: 'Tvoříme webové a mobilní aplikace budoucnosti',
     siteName: "minjiya",
     images: [
       {
@@ -26,7 +28,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: "minjiya",
-    description: 'tvoříme webové a mobilní aplikace budoucnosti',
+    description: 'Tvoříme webové a mobilní aplikace budoucnosti',
     images: [
       {
         url: "https://minjiya.com/mt.png",
