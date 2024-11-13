@@ -28,7 +28,7 @@ export default function OurProjects() {
                 />
                 <Card
                     title="Drink App"
-                    description="Progresivní webová aplikace zaměřená na sledování pitného režimu, optimalizovaná pro mobilní zařízení. Vyvinuta na platformě React."
+                    description="Aplikace pro Android a iOS zaměřená na sledování pitného režimu. Vyvinuta na platformách Expo a React Native."
                     image={drinkapp}
                     link={null}
                 />
