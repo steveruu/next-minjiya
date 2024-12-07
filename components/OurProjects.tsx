@@ -27,12 +27,11 @@ export default function OurProjects() {
                     link={null}
                 />
                 <Card
-                    title="Drink App"
+                    title="DrinkApp"
                     description="Aplikace pro Android a iOS zaměřená na sledování pitného režimu. Vyvinuta na platformách Expo a React Native."
                     image={drinkapp}
                     link={null}
                 />
-
             </div>
         </div>
     );
