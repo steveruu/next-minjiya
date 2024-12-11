@@ -3,9 +3,9 @@ import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
 import "./globals.css";
-import { Inter } from 'next/font/google'
+import { Lexend } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] });
+const lexend = Lexend({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://minjiya.com"),
@@ -48,9 +48,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="cs" className="scroll-smooth">
       <body
-        className={inter.className}
+        className={lexend.className}
       >
         <Analytics />
         {children}
