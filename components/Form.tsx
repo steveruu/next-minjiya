@@ -56,21 +56,21 @@ const Form = ({ czech }: { czech: boolean }) => {
                     style: {
                         background: '#1a1a1a',
                         color: '#fff',
-                        border: '1px solid #333',
+                        border: '1px solid rgba(255,255,255,0.1)',
                     },
                 }}
             />
             <form action={formAction} ref={formRef} id="form" className="max-w-md mx-auto mt-8">
-                <div className="flex flex-col gap-6 font-rubik">
+                <div className="flex flex-col gap-4 font-rubik">
                     <div className="relative">
                         <input
                             type="text"
                             id="userFirstName"
                             name="userFirstName"
                             placeholder={czech ? "Jméno" : "Name"}
-                            className="w-full p-4 bg-neutral-800/50 border border-neutral-700 rounded-lg 
-                            focus:border-purpur focus:ring-2 focus:ring-purple-900/50 outline-none 
-                            transition-all duration-300 placeholder:text-neutral-500 text-white"
+                            className="w-full p-4 bg-white/10 border border-white/20 rounded-lg 
+                            focus:border-white/40 focus:ring-2 focus:ring-white/10 outline-none 
+                            transition-all duration-300 placeholder:text-white/50 text-white"
                             required
                         />
                     </div>
@@ -80,18 +80,18 @@ const Form = ({ czech }: { czech: boolean }) => {
                             id="email"
                             name="email"
                             placeholder="Email"
-                            className="w-full p-4 bg-neutral-800/50 border border-neutral-700 rounded-lg 
-                            focus:border-purpur focus:ring-2 focus:ring-purple-900/50 outline-none 
-                            transition-all duration-300 placeholder:text-neutral-500 text-white"
+                            className="w-full p-4 bg-white/10 border border-white/20 rounded-lg 
+                            focus:border-white/40 focus:ring-2 focus:ring-white/10 outline-none 
+                            transition-all duration-300 placeholder:text-white/50 text-white"
                             required
                         />
                     </div>
                     <div className="relative">
                         <textarea
                             placeholder={czech ? "Vaše zpráva" : "Your message"}
-                            className="w-full p-4 bg-neutral-800/50 border border-neutral-700 rounded-lg 
-                            focus:border-purpur focus:ring-2 focus:ring-purple-900/50 outline-none 
-                            transition-all duration-300 min-h-[150px] placeholder:text-neutral-500 
+                            className="w-full p-4 bg-white/10 border border-white/20 rounded-lg 
+                            focus:border-white/40 focus:ring-2 focus:ring-white/10 outline-none 
+                            transition-all duration-300 min-h-[150px] placeholder:text-white/50 
                             text-white resize-none"
                             required
                             id="text"
@@ -109,12 +109,12 @@ const Form = ({ czech }: { czech: boolean }) => {
                     </div>
                     <button
                         type="submit"
-                        className="p-4 bg-purpur text-white rounded-lg font-semibold 
-                        disabled:bg-neutral-700 disabled:text-neutral-400 
-                        hover:bg-purple-700 transform hover:-translate-y-1 
-                        hover:shadow-lg hover:shadow-purple-500/20 
+                        className="p-4 bg-white text-purple-900 rounded-lg font-semibold 
+                        disabled:bg-white/20 disabled:text-white/40
+                        hover:bg-purple-50 transform hover:-translate-y-1 
+                        hover:shadow-lg hover:shadow-white/20
                         transition-all duration-300 
-                        disabled:hover:bg-neutral-700 disabled:hover:transform-none 
+                        disabled:hover:bg-white/20 disabled:hover:transform-none 
                         disabled:cursor-not-allowed"
                         disabled={!isVerified}
                     >
