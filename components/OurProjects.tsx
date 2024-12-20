@@ -32,6 +32,7 @@ export default function OurProjects() {
                     image={millers}
                     link={null}
                 />
+
             </div>
         </div>
     );

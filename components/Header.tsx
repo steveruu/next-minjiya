@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Header({ ...props }) {
     return (
-        <header className="fixed w-full z-50 backdrop-blur-md bg-zinc-950/80 border-b border-white/10 will-change-transform transform-gpu">
+        <header className="hidden sm:block fixed w-full z-50 backdrop-blur-md bg-zinc-950/80 border-b border-white/10 will-change-transform transform-gpu">
             <div className="container mx-auto px-4">
                 <nav className="flex items-center justify-between h-16">
                     <a
