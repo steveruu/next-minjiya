@@ -32,7 +32,7 @@ export default function Technologies() {
                             height={logo.height}
                             width={logo.width}
                             draggable={false}
-                            className="transition-transform duration-300 group-hover:scale-110 filter grayscale hover:grayscale-0"
+                            className="transition-all duration-300 filter grayscale hover:grayscale-0"
                         />
                     </div>
                 ))}

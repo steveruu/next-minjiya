@@ -92,7 +92,7 @@ const Form = ({ czech }: { czech: boolean }) => {
                             className="w-full p-4 bg-neutral-800/50 border border-neutral-700 rounded-lg 
                             focus:border-purpur focus:ring-2 focus:ring-purple-900/50 outline-none 
                             transition-all duration-300 min-h-[150px] placeholder:text-neutral-500 
-                            text-white resize-y"
+                            text-white resize-none"
                             required
                             id="text"
                             name="text"
