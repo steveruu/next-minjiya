@@ -3,9 +3,9 @@ import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
 import "./globals.css";
-import { Lexend } from 'next/font/google'
+import { Rubik } from 'next/font/google'
 
-const lexend = Lexend({ subsets: ['latin'] });
+const rubik = Rubik({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://minjiya.com"),
@@ -50,7 +50,7 @@ export default function RootLayout({
   return (
     <html lang="cs" className="scroll-smooth">
       <body
-        className={lexend.className}
+        className={rubik.className}
       >
         <Analytics />
         {children}

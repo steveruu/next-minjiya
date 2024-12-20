@@ -13,18 +13,28 @@ export default function Technologies() {
     ];
 
     return (
-        <div className="max-w-[1800px]">
-            <Marquee autoFill gradient gradientWidth={200} gradientColor="#fff" speed={50}>
+        <div className="relative max-w-[1800px] py-12">
+            {/* Gradient masks */}
+            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10" />
+            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10" />
+
+            {/* Marquee content */}
+            <Marquee
+                autoFill
+                speed={40}
+                className="py-8"
+            >
                 {initialLogos.map((logo, index) => (
-                    <Image
-                        key={index}
-                        src={logo.src}
-                        alt={logo.alt}
-                        height={logo.height}
-                        width={logo.width}
-                        draggable={false}
-                        className="mr-[5rem]"
-                    />
+                    <div key={index} className="mx-12 group">
+                        <Image
+                            src={logo.src}
+                            alt={logo.alt}
+                            height={logo.height}
+                            width={logo.width}
+                            draggable={false}
+                            className="transition-transform duration-300 group-hover:scale-110 filter grayscale hover:grayscale-0"
+                        />
+                    </div>
                 ))}
             </Marquee>
         </div>

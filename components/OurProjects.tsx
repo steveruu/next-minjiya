@@ -15,6 +15,12 @@ export default function OurProjects() {
             </p>
             <div className="flex flex-row flex-wrap gap-4 mt-10 mb-10 justify-center items-center max-w-[80%] mx-auto">
                 <Card
+                    title="DrinkApp"
+                    description="Aplikace pro Android a iOS zaměřená na sledování pitného režimu. Vyvinuta na platformách Expo a React Native."
+                    image={drinkapp}
+                    link={"./drinkapp"}
+                />
+                <Card
                     title="UnionMC"
                     description="Responsivní, minimalistická webová stránka pro UnionMC, vytvořená pomocí čistého HTML a CSS."
                     image={union}
@@ -24,12 +30,6 @@ export default function OurProjects() {
                     title="Millers Oils"
                     description="Online e-shop specializující se na prodej olejů a maziv, postavený na technologiích React a Next.js. Aktuálně ve fázi vývoje."
                     image={millers}
-                    link={null}
-                />
-                <Card
-                    title="DrinkApp"
-                    description="Aplikace pro Android a iOS zaměřená na sledování pitného režimu. Vyvinuta na platformách Expo a React Native."
-                    image={drinkapp}
                     link={null}
                 />
             </div>

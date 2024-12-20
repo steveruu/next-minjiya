@@ -3,34 +3,39 @@ import Image from "next/image";
 
 export default function Header({ ...props }) {
     return (
-        <header className="hidden top-0 md:flex h-16 items-center gap-4 border-b border-b-zinc-800 bg-background px-4 md:px-6 bg-zinc-950 text-slate-200">
-            <nav className="gap-6 font-medium flex flex-row justify-start items-center md:gap-5 text-sm lg:gap-6 font-rubik ">
-                <Link
-                    href="#"
-                    className="hidden md:inline-flex items-center gap-6 text-muted-foreground transition-colors hover:text-foreground"
-                >
-                    <Image src="/mt.svg" alt="minjiya" width={50} height={50} className="flex-grow" />
-                    {props.czech ? "domů" : "home"}
-                </Link>
-                <Link
-                    href="#technologies"
-                    className="hidden md:inline text-neutral-400 transition-colors hover:text-white"
-                >
-                    {props.czech ? "technologie" : "technologies"}
-                </Link>
-                <Link
-                    href="#projects"
-                    className="hidden md:inline text-neutral-400 transition-colors hover:text-white"
-                >
-                    {props.czech ? "naše projekty" : "our projects"}
-                </Link>
-                <Link
-                    href="#contact-us"
-                    className="hidden md:inline text-neutral-400 transition-colors hover:text-white"
-                >
-                    {props.czech ? "kontaktujte nás" : "contact us"}
-                </Link>
-            </nav>
+        <header className="fixed w-full z-50 backdrop-blur-md bg-zinc-950/80 border-b border-white/10">
+            <div className="container mx-auto px-4">
+                <nav className="flex items-center justify-between h-16">
+                    <Link
+                        href="#"
+                        className="flex items-center gap-3 text-white hover:opacity-80 transition-opacity"
+                    >
+                        <Image
+                            src="/mt.svg"
+                            alt="minjiya"
+                            width={40}
+                            height={40}
+                            className="transform hover:scale-105 transition-transform"
+                        />
+                    </Link>
+
+                    <div className="hidden md:flex items-center gap-8">
+                        {[
+                            { href: "#technologies", label: props.czech ? "technologie" : "technologies" },
+                            { href: "#projects", label: props.czech ? "naše projekty" : "our projects" },
+                            { href: "#contact-us", label: props.czech ? "kontaktujte nás" : "contact us" },
+                        ].map((item) => (
+                            <Link
+                                key={item.href}
+                                href={item.href}
+                                className="text-gray-300 hover:text-white transition-colors duration-300 font-rubik text-sm"
+                            >
+                                {item.label}
+                            </Link>
+                        ))}
+                    </div>
+                </nav>
+            </div>
         </header>
     );
 }

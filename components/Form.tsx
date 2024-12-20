@@ -48,41 +48,74 @@ const Form = ({ czech }: { czech: boolean }) => {
 
     return (
         <>
-            <Toaster position="bottom-center" />
-            <form action={formAction} ref={formRef} id="form">
-                <div className="flex flex-col gap-4 pt-8 font-rubik ">
-                    <input
-                        type="text"
-                        id="userFirstName"
-                        name="userFirstName"
-                        placeholder={czech ? "Jméno" : "Name"}
-                        className="p-2 border-2 border-gray-300 rounded-md"
-                        required
-                    />
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        placeholder="Email"
-                        className="p-2 border-2 border-gray-300 rounded-md"
-                        required
-                    />
-                    <textarea
-                        placeholder={czech ? "Vaše zpráva" : "Your message"}
-                        className="p-2 border-2 border-gray-300 rounded-md max-h-72"
-                        required
-                        id="text"
-                        name="text"
-                    />
-                    <ReCAPTCHA
-                        sitekey="6LcNXCcUAAAAAOsIMLoSI8IvJFc3z0iyiiCIEMuj"
-                        ref={recaptchaRef}
-                        onChange={handleCaptchaSubmission}
-                        onExpired={() => { setIsVerified(false); }}
-                    />
+            <Toaster
+                position="bottom-center"
+                toastOptions={{
+                    className: 'font-rubik',
+                    duration: 3000,
+                    style: {
+                        background: '#1a1a1a',
+                        color: '#fff',
+                        border: '1px solid #333',
+                    },
+                }}
+            />
+            <form action={formAction} ref={formRef} id="form" className="max-w-md mx-auto mt-8">
+                <div className="flex flex-col gap-6 font-rubik">
+                    <div className="relative">
+                        <input
+                            type="text"
+                            id="userFirstName"
+                            name="userFirstName"
+                            placeholder={czech ? "Jméno" : "Name"}
+                            className="w-full p-4 bg-neutral-800/50 border border-neutral-700 rounded-lg 
+                            focus:border-purpur focus:ring-2 focus:ring-purple-900/50 outline-none 
+                            transition-all duration-300 placeholder:text-neutral-500 text-white"
+                            required
+                        />
+                    </div>
+                    <div className="relative">
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Email"
+                            className="w-full p-4 bg-neutral-800/50 border border-neutral-700 rounded-lg 
+                            focus:border-purpur focus:ring-2 focus:ring-purple-900/50 outline-none 
+                            transition-all duration-300 placeholder:text-neutral-500 text-white"
+                            required
+                        />
+                    </div>
+                    <div className="relative">
+                        <textarea
+                            placeholder={czech ? "Vaše zpráva" : "Your message"}
+                            className="w-full p-4 bg-neutral-800/50 border border-neutral-700 rounded-lg 
+                            focus:border-purpur focus:ring-2 focus:ring-purple-900/50 outline-none 
+                            transition-all duration-300 min-h-[150px] placeholder:text-neutral-500 
+                            text-white resize-y"
+                            required
+                            id="text"
+                            name="text"
+                        />
+                    </div>
+                    <div className="flex justify-center">
+                        <ReCAPTCHA
+                            theme="dark"
+                            sitekey="6LcNXCcUAAAAAOsIMLoSI8IvJFc3z0iyiiCIEMuj"
+                            ref={recaptchaRef}
+                            onChange={handleCaptchaSubmission}
+                            onExpired={() => { setIsVerified(false); }}
+                        />
+                    </div>
                     <button
                         type="submit"
-                        className="p-2 bg-purpur text-white rounded-md font-semibold disabled:bg-purple-300"
+                        className="p-4 bg-purpur text-white rounded-lg font-semibold 
+                        disabled:bg-neutral-700 disabled:text-neutral-400 
+                        hover:bg-purple-700 transform hover:-translate-y-1 
+                        hover:shadow-lg hover:shadow-purple-500/20 
+                        transition-all duration-300 
+                        disabled:hover:bg-neutral-700 disabled:hover:transform-none 
+                        disabled:cursor-not-allowed"
                         disabled={!isVerified}
                     >
                         {czech ? "Odeslat" : "Send"}
