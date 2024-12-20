@@ -1,175 +1,130 @@
-import Image from "next/image";
+import Image from 'next/image'
+import { FaWater, FaBell, FaApple } from 'react-icons/fa'
+import { IoIosFlash } from 'react-icons/io'
 
 export default function DrinkApp() {
     return (
-        <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
+        <main className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
+            {/* Header */}
+            <header className="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-sm z-50 border-b border-blue-100">
+                <div className="container mx-auto px-4">
+                    <div className="flex items-center h-16">
+                        <div className="text-2xl font-bold text-blue-900 flex items-center gap-2">
+                            DrinkApp <span>💧</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
             {/* Hero Section */}
-            <div className="container mx-auto px-4 py-16">
+            <section className="container mx-auto px-4 pt-32 pb-32">
                 <div className="flex flex-col md:flex-row items-center justify-between">
-                    <div className="md:w-1/2 mb-8 md:mb-0">
-                        <h1 className="text-4xl md:text-6xl font-bold text-gray-800 mb-6">
-                            Track Your Hydration Journey
+                    <div className="md:w-1/2 space-y-6">
+                        <h1 className="text-4xl md:text-6xl font-bold text-blue-900">
+                            Stay Hydrated, Stay Healthy
                         </h1>
-                        <p className="text-xl text-gray-600 mb-8">
-                            Stay healthy and hydrated with DrinkApp. Monitor
-                            your daily water intake, set reminders, and achieve
-                            your wellness goals.
+                        <p className="text-xl text-blue-700">
+                            Track your daily water intake, get timely reminders, and maintain a healthy lifestyle with DrinkApp.
                         </p>
-                        <div className="space-x-4">
-                            <a
-                                className="bg-blue-600 text-white px-8 py-3 rounded-full 
-                hover:bg-blue-700 transition duration-300"
-                                href="#download"
-                            >
-                                Download Now
-                            </a>
-                            <a
-                                className="border-2 border-blue-600 text-blue-600 px-8 py-3 
-                rounded-full hover:bg-blue-50 transition duration-300"
-                                href="#why-choose-drinkapp"
-                            >
-                                Learn More
-                            </a>
-                        </div>
+                        <a
+                            href="https://apps.apple.com/us/app/drinkapp-by-drinkup/id6739220265"
+                            className="inline-flex items-center space-x-2 bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition-colors"
+                            target="_blank"
+                        >
+                            <FaApple className="text-2xl" />
+                            <span>Download on App Store</span>
+                        </a>
                     </div>
-                    <div className="md:w-1/2">
-                        <div className="relative h-[400px] md:h-[600px] p-4">
-                            <div className="relative h-full w-full drop-shadow-2xl rounded-[2.5rem] p-4 md:p-6">
-                                <Image
-                                    src="/images/drinkapp_2.png"
-                                    alt="DrinkApp Interface"
-                                    fill
-                                    className="object-contain p-2 md:p-4"
-                                    priority
-                                    style={{
-                                        borderRadius: "2rem",
-                                    }}
-                                />
-                            </div>
-                        </div>
+                    <div className="md:w-1/2 mt-10 md:mt-0">
+                        <Image
+                            src="/images/drinkapp_2.png"
+                            alt="DrinkApp Interface"
+                            width={400}
+                            height={800}
+                            className="mx-auto drop-shadow-2xl"
+                        />
                     </div>
                 </div>
-            </div>
-
+            </section>
             {/* Features Section */}
-            <div className="bg-white py-16">
-                <div
-                    className="container mx-auto px-4"
-                    id="why-choose-drinkapp"
-                >
-                    <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">
-                        Why Choose DrinkApp?
+            <section className="bg-white py-20">
+                <div className="container mx-auto px-4">
+                    <h2 className="text-3xl font-bold text-center text-blue-900 mb-16">
+                        Everything you need to stay hydrated
                     </h2>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {/* Feature 1 */}
-                        <div className="p-6 bg-blue-50 rounded-xl">
-                            <div
-                                className="w-12 h-12 bg-blue-600 rounded-full flex items-center 
-                justify-center mb-4"
-                            >
-                                <svg
-                                    className="w-6 h-6 text-white"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth={2}
-                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                                    />
-                                </svg>
-                            </div>
-                            <h3 className="text-xl font-semibold mb-2">
-                                Smart Reminders
-                            </h3>
-                            <p className="text-gray-600">
-                                Never forget to stay hydrated with our
-                                intelligent reminder system.
-                            </p>
-                        </div>
+                    <div className="grid md:grid-cols-3 gap-12">
+                        <FeatureCard
+                            icon={<FaWater className="text-4xl text-blue-500 mx-auto" />}
+                            title="Track Water Intake"
+                            description="Easily log your daily water consumption with just a tap"
+                        />
+                        <FeatureCard
+                            icon={<FaBell className="text-4xl text-blue-500 mx-auto" />}
+                            title="Smart Reminders"
+                            description="Get personalized reminders based on your daily routine"
+                        />
+                        <FeatureCard
+                            icon={<IoIosFlash className="text-4xl text-blue-500 mx-auto" />}
+                            title="Calorie Tracking"
+                            description="Monitor your beverage caloric intake effortlessly"
+                        />
+                    </div>
+                </div>
+            </section>
 
-                        {/* Feature 2 */}
-                        <div className="p-6 bg-blue-50 rounded-xl">
-                            <div
-                                className="w-12 h-12 bg-blue-600 rounded-full flex items-center 
-                justify-center mb-4"
-                            >
-                                <svg
-                                    className="w-6 h-6 text-white"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth={2}
-                                        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-                                    />
-                                </svg>
-                            </div>
-                            <h3 className="text-xl font-semibold mb-2">
-                                Track Progress
-                            </h3>
-                            <p className="text-gray-600">
-                                Monitor your daily, weekly, and monthly
-                                hydration patterns with detailed analytics.
-                            </p>
+            {/* Stats Section */}
+            <section className="bg-blue-50 py-20">
+                <div className="container mx-auto px-4">
+                    <div className="grid md:grid-cols-3 gap-8 text-center">
+                        <div className="space-y-2">
+                            <div className="text-4xl font-bold text-blue-600">20+</div>
+                            <div className="text-blue-900">Active Users</div>
                         </div>
-
-                        {/* Feature 3 */}
-                        <div className="p-6 bg-blue-50 rounded-xl">
-                            <div
-                                className="w-12 h-12 bg-blue-600 rounded-full flex items-center 
-                justify-center mb-4"
-                            >
-                                <svg
-                                    className="w-6 h-6 text-white"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth={2}
-                                        d="M12 4v16m8-8H4"
-                                    />
-                                </svg>
-                            </div>
-                            <h3 className="text-xl font-semibold mb-2">
-                                Personalized Goals
-                            </h3>
-                            <p className="text-gray-600">
-                                Set and achieve custom hydration goals based on
-                                your lifestyle and needs.
-                            </p>
+                        <div className="space-y-2">
+                            <div className="text-4xl font-bold text-blue-600">1K+</div>
+                            <div className="text-blue-900">Glasses Tracked</div>
+                        </div>
+                        <div className="space-y-2">
+                            <div className="text-4xl font-bold text-blue-600">5.0★</div>
+                            <div className="text-blue-900">App Store Rating</div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
 
             {/* CTA Section */}
-            <div className="bg-blue-600 text-white py-16">
+            <section className="py-20">
                 <div className="container mx-auto px-4 text-center">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                    <h2 className="text-3xl font-bold text-blue-900 mb-6">
                         Start Your Hydration Journey Today
                     </h2>
-                    <p className="text-xl mb-8 max-w-2xl mx-auto">
-                        Join thousands of users who have improved their daily
-                        hydration habits with DrinkApp.
+                    <p className="text-xl text-blue-700 mb-8 max-w-2xl mx-auto">
+                        Join millions of users who have improved their daily water intake with DrinkApp.
                     </p>
                     <a
-                        className="bg-white text-blue-600 px-8 py-3 rounded-full 
-            hover:bg-blue-50 transition duration-300 text-lg font-semibold"
-                        href="#download"
+                        href="https://apps.apple.com/us/app/drinkapp-by-drinkup/id6739220265"
+                        className="inline-flex items-center space-x-2 bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition-colors"
+                        target="_blank"
                     >
-                        Download DrinkApp
+                        <FaApple className="text-2xl" />
+                        <span>Download Now</span>
                     </a>
                 </div>
-            </div>
+            </section>
+        </main>
+    )
+}
+
+function FeatureCard({ icon, title, description }: {
+    icon: React.ReactNode
+    title: string
+    description: string
+}) {
+    return (
+        <div className="text-center p-6 rounded-xl bg-blue-50 hover:bg-blue-100 transition-colors">
+            <div className="mb-4">{icon}</div>
+            <h3 className="text-xl font-semibold text-blue-900 mb-2">{title}</h3>
+            <p className="text-blue-700">{description}</p>
         </div>
-    );
+    )
 }
