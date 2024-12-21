@@ -110,7 +110,7 @@ export default function DrinkApp() {
                             <span>Download for iOS</span>
                         </a>
                         <a
-                            href="https://minjiya.com/drinkapp/DrinkApp.apk"
+                            href="https://minjiya.com/bin/drinkapp.apk"
                             className="inline-flex items-center space-x-2 bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition-colors"
                             target="_blank"
                         >
