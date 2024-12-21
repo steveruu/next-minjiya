@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { FaWater, FaBell, FaApple } from 'react-icons/fa'
+import { FaWater, FaBell, FaApple, FaDownload, FaAndroid } from 'react-icons/fa'
 import { IoIosFlash } from 'react-icons/io'
 
 export default function DrinkApp() {
@@ -27,12 +27,11 @@ export default function DrinkApp() {
                             Track your daily water intake, get timely reminders, and maintain a healthy lifestyle with DrinkApp.
                         </p>
                         <a
-                            href="https://apps.apple.com/us/app/drinkapp-by-drinkup/id6739220265"
+                            href="#download"
                             className="inline-flex items-center space-x-2 bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition-colors"
-                            target="_blank"
                         >
-                            <FaApple className="text-2xl" />
-                            <span>Download on App Store</span>
+                            <FaDownload />
+                            <span>Download</span>
                         </a>
                     </div>
                     <div className="md:w-1/2 mt-10 md:mt-0">
@@ -93,7 +92,7 @@ export default function DrinkApp() {
             </section>
 
             {/* CTA Section */}
-            <section className="py-20">
+            <section className="py-20" id="download">
                 <div className="container mx-auto px-4 text-center">
                     <h2 className="text-3xl font-bold text-blue-900 mb-6">
                         Start Your Hydration Journey Today
@@ -101,14 +100,24 @@ export default function DrinkApp() {
                     <p className="text-xl text-blue-700 mb-8 max-w-2xl mx-auto">
                         Join millions of users who have improved their daily water intake with DrinkApp.
                     </p>
-                    <a
-                        href="https://apps.apple.com/us/app/drinkapp-by-drinkup/id6739220265"
-                        className="inline-flex items-center space-x-2 bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition-colors"
-                        target="_blank"
-                    >
-                        <FaApple className="text-2xl" />
-                        <span>Download Now</span>
-                    </a>
+                    <div className="flex flex-row gap-2 justify-center items-center">
+                        <a
+                            href="https://apps.apple.com/us/app/drinkapp-by-drinkup/id6739220265"
+                            className="inline-flex items-center space-x-2 bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition-colors"
+                            target="_blank"
+                        >
+                            <FaApple className="text-2xl" />
+                            <span>Download for iOS</span>
+                        </a>
+                        <a
+                            href="https://minjiya.com/drinkapp/DrinkApp.apk"
+                            className="inline-flex items-center space-x-2 bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition-colors"
+                            target="_blank"
+                        >
+                            <FaAndroid className="text-2xl" />
+                            <span>Download for Android</span>
+                        </a>
+                    </div>
                 </div>
             </section>
         </main>
