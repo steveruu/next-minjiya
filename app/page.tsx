@@ -9,16 +9,12 @@ import OurProjects from "@/components/OurProjects";
 export default function CzechHome() {
     return (
         <>
-            {/* Hero Section with elegant gradient background */}
             <div className="relative min-h-screen bg-gradient-to-b from-black to-purple-950/100 overflow-x-hidden">
                 <Header czech />
 
-                {/* Restructured Hero Content */}
                 <div className="min-h-[calc(100dvh)] flex flex-col justify-between py-8 lg:py-16">
-                    {/* Main content */}
                     <div className="container mx-auto mt-2 md:mt-16 px-4 flex-grow flex items-center">
                         <div className="flex flex-col xl:flex-row flex-grow items-center justify-center gap-8 lg:gap-16">
-                            {/* Left side - Logo & Title */}
                             <div className="flex flex-col items-center lg:items-start lg:w-1/2 max-w-xl">
                                 <div className="relative group">
                                     <Image
@@ -42,14 +38,12 @@ export default function CzechHome() {
                                 </h2>
                             </div>
 
-                            {/* Right side - Code Preview */}
                             <div className="lg:w-1/2 max-w-xl mt-4 sm:mt-8 lg:mt-0">
                                 <CodePreview />
                             </div>
                         </div>
                     </div>
 
-                    {/* Bottom content - No longer absolute */}
                     <div className="container mx-auto px-4 text-center mt-8 lg:mt-0">
                         <h3 className="text-2xl md:text-4xl font-rubik font-medium tracking-wide mb-4 sm:mb-8 px-4">
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-purple-200">
@@ -67,7 +61,6 @@ export default function CzechHome() {
                 </div>
             </div>
 
-            {/* Enhanced Technologies Section */}
             <div id="technologies" className="py-32 bg-gradient-to-b from-white to-purple-50">
                 <div className="container mx-auto px-4">
                     <div className="flex items-center justify-center gap-4 mb-20">
@@ -85,7 +78,6 @@ export default function CzechHome() {
                 </div>
             </div>
 
-            {/* Enhanced Contact Section */}
             <div id="contact-us" className="relative bg-gradient-to-b from-purple-950  to-purpur/90 py-32">
 
                 <div className="container mx-auto px-4 relative">
@@ -100,7 +92,6 @@ export default function CzechHome() {
                             Máte otázky nebo zájem o spolupráci? Neváhejte se nám ozvat!
                         </p>
 
-                        {/* Enhanced Social Links */}
                         <div className="flex flex-row flex-wrap gap-2 md:gap-6 justify-center mb-12">
                             {[
                                 { icon: FaEnvelope, label: "Email", href: "mailto:inquiries@minjiya.com" },
@@ -124,7 +115,6 @@ export default function CzechHome() {
                 </div>
             </div>
 
-            {/* Enhanced Footer */}
             <footer className="bg-neutral-900 py-8 px-4 border-t border-neutral-800">
                 <p className="text-neutral-400 text-center text-sm max-w-3xl mx-auto hover:text-neutral-300 transition-colors duration-300">
                     minjiya není nijak spojena s Tailwind CSS,
