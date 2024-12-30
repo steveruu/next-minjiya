@@ -49,6 +49,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="cs" className="scroll-smooth">
+      <head>
+        <meta name="theme-color" content="#000000" />
+      </head>
       <body
         className={rubik.className}
       >
