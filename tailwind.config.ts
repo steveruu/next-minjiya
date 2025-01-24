@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import animate from "tailwindcss-animate";
 
 const config: Config = {
     darkMode: ["class"],
@@ -23,6 +24,16 @@ const config: Config = {
                     "0%": { transform: "translateX(0%)" },
                     "100%": { transform: "translateX(-100%)" },
                 },
+                "gradient-xy": {
+                    "0%, 100%": {
+                        "background-size": "400% 400%",
+                        "background-position": "left center",
+                    },
+                    "50%": {
+                        "background-size": "200% 200%",
+                        "background-position": "right center",
+                    },
+                },
             },
             animation: {
                 marquee: "marquee 45s linear infinite",
@@ -30,6 +41,6 @@ const config: Config = {
             },
         },
     },
-    plugins: [require("tailwindcss-animate")],
+    plugins: [animate],
 };
 export default config;
