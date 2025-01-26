@@ -6,14 +6,16 @@ export default function Card({
     description,
     image,
     link,
+    unknown
 }: {
     title: string;
     description: string;
     image: StaticImageData;
     link: string | null;
+    unknown: boolean | null
 }) {
     return (
-        <div className="max-w-sm bg-white border border-gray-200 rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+        <div className={`max-w-sm ${unknown ? 'bg-[#134E16]' : 'bg-white'} border border-gray-200 rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 overflow-hidden`}>
             <div className="relative overflow-hidden">
                 <Image
                     className="rounded-t-xl"
@@ -25,11 +27,11 @@ export default function Card({
             </div>
             <div className="p-6">
                 <div>
-                    <h5 className="mb-3 text-2xl font-bold tracking-tight text-gray-900 font-rubik">
+                    <h5 className={`mb-3 text-2xl font-bold tracking-tight ${unknown ? 'text-white' : 'text-gray-900'} font-rubik`}>
                         {title}
                     </h5>
                 </div>
-                <p className="mb-5 font-normal text-gray-600 font-rubik leading-relaxed">
+                <p className={`mb-5 font-normal ${unknown ? 'text-white/90' : 'text-gray-600'} font-rubik leading-relaxed`}>
                     {description}
                 </p>
                 {link ? (
@@ -55,7 +57,7 @@ export default function Card({
                         </svg>
                     </a>
                 ) : (
-                    <a className="inline-flex items-center px-4 py-2.5 text-sm font-medium text-white bg-gray-300 rounded-lg cursor-not-allowed transition-all duration-300 shadow-sm">
+                    <a className={`inline-flex items-center px-4 py-2.5 text-sm font-medium text-white ${unknown ? 'bg-[#0D3510]' : 'bg-gray-300'} rounded-lg cursor-not-allowed transition-all duration-300 shadow-sm`}>
                         Stále ve vývoji
                         <MdDoNotDisturbAlt className="ms-2 text-lg" />
                     </a>
