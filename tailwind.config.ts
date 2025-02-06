@@ -15,6 +15,7 @@ const config: Config = {
                 minjiya: "#161729",
             },
             fontFamily: {
+                sans: ["var(--font-schibsted)", "sans-serif"],
                 mona: ["Mona Sans", "sans-serif"],
                 rubik: ["Rubik", "sans-serif"],
                 stick: ["Stick", "sans-serif"],
