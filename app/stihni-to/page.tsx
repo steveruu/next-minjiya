@@ -264,11 +264,11 @@ export default function StihniTo() {
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                Ikona "subway-variant" je součástí knihovny
-                                Material Design Icons od společnosti Google a je
-                                používána v souladu s podmínkami licence Apache
-                                License 2.0. Tento symbol není registrovanou
-                                ochrannou známkou.
+                                Ikona &quot;subway-variant&quot; je součástí
+                                knihovny Material Design Icons od společnosti
+                                Google a je používána v souladu s podmínkami
+                                licence Apache License 2.0. Tento symbol není
+                                registrovanou ochrannou známkou.
                             </a>
                         </p>
                     </div>
