@@ -194,11 +194,11 @@ export default function StihniTo() {
                             </button>
                             <button
                                 disabled
-                                className="group bg-white/5 backdrop-blur-lg text-white/50 px-8 py-4 rounded-xl font-semibold cursor-not-allowed flex items-center gap-2 w-full sm:w-auto justify-center"
+                                className="group bg-white/5 text-white/50 px-8 py-4 rounded-xl font-semibold cursor-not-allowed flex items-center gap-2 w-full sm:w-auto justify-center"
                             >
                                 <FaAndroid className="w-5 h-5" />
                                 Již brzy pro Android
-                                <span className="bg-white/5 backdrop-blur-lg px-2 py-1 rounded text-sm ml-2 text-white/50">
+                                <span className="bg-white/5 px-2 py-1 rounded text-sm ml-2 text-white/50">
                                     .apk
                                 </span>
                             </button>
