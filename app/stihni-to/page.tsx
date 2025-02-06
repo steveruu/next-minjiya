@@ -223,13 +223,13 @@ export default function StihniTo() {
                         </div>
                         <div className="flex gap-8 mb-6">
                             <a
-                                href="#"
+                                href="/stihni-to/privacy"
                                 className="text-indigo-200 hover:text-white transition-colors"
                             >
                                 Ochrana soukromí
                             </a>
                             <a
-                                href="#"
+                                href="/stihni-to/tos"
                                 className="text-indigo-200 hover:text-white transition-colors"
                             >
                                 Podmínky použití
@@ -238,7 +238,7 @@ export default function StihniTo() {
                         <p className="text-indigo-200/80 text-sm">
                             &copy; 2025 minjiya. Všechna práva vyhrazena.
                         </p>
-                        <p className="text-indigo-200/60 text-xs">
+                        <p className="text-indigo-200/80 text-xs">
                             Vytvořil{" "}
                             <a
                                 href="https://stvr.cz"
@@ -250,12 +250,25 @@ export default function StihniTo() {
                             </a>{" "}
                             v rámci{" "}
                             <a
-                                href="https://github.com/minjiyalabs"
+                                href="/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="hover:text-indigo-300 transition-colors duration-200"
                             >
                                 @minjiyalabs
+                            </a>
+                        </p>
+                        <p className="text-indigo-200/60 text-xs max-w-md text-center">
+                            <a
+                                href="https://github.com/google/material-design-icons/blob/master/LICENSE"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Ikona "subway-variant" je součástí knihovny
+                                Material Design Icons od společnosti Google a je
+                                používána v souladu s podmínkami licence Apache
+                                License 2.0. Tento symbol není registrovanou
+                                ochrannou známkou.
                             </a>
                         </p>
                     </div>
