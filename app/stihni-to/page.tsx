@@ -159,8 +159,8 @@ export default function StihniTo() {
                             </h2>
                         </div>
                         <p className="text-indigo-200 leading-relaxed">
-                            Aplikace, se kterou si budete rozumět. Bez
-                            složitýého nastavování, prostě to funguje.
+                            Aplikace, se kterou si budete rozumět. Bez složitého
+                            nastavování, prostě to funguje.
                         </p>
                     </div>
                 </div>
