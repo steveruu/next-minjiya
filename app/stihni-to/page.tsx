@@ -236,7 +236,7 @@ export default function StihniTo() {
                             </a>
                         </div>
                         <p className="text-indigo-200/80 text-sm">
-                            &copy; 2024 minjiya. Všechna práva vyhrazena.
+                            &copy; 2025 minjiya. Všechna práva vyhrazena.
                         </p>
                         <p className="text-indigo-200/60 text-xs">
                             Vytvořil{" "}
