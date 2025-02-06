@@ -84,7 +84,7 @@ export default function StihniTo() {
 
                 {/* App Preview with Animation */}
                 <div className="mt-20 text-center relative">
-                    <div className="bg-gradient-to-b from-[#1a1f2d] to-[#2a2f3d] inline-block rounded-[3rem] p-5 shadow-2xl  duration-500">
+                    <div className="bg-gradient-to-b from-[#1a1f2d] to-[#2a2f3d] inline-block rounded-[3rem]  min-[400px]:p-5 shadow-2xl  duration-500">
                         <div className="overflow-hidden rounded-[2.5rem] w-[320px]">
                             <Image
                                 src="/images/stihni-to.png"
@@ -181,7 +181,7 @@ export default function StihniTo() {
 
                         <h2 className="text-3xl font-bold mb-6">Připraveni?</h2>
                         <p className="text-indigo-200 mb-8 max-w-2xl mx-auto">
-                            Buďte mezi prvními, kdo vyzkouší revoluční způsob
+                            Buďte mezi prvními, kteří vyzkouší revoluční způsob
                             cestování MHD.
                         </p>
                         <div className="flex flex-col sm:flex-row justify-center gap-4">
