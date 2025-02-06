@@ -84,7 +84,7 @@ export default function StihniTo() {
 
                 {/* App Preview with Animation */}
                 <div className="mt-20 text-center relative">
-                    <div className="bg-gradient-to-b from-[#1a1f2d] to-[#2a2f3d] inline-block rounded-[3rem] p-6 shadow-2xl  duration-500">
+                    <div className="bg-gradient-to-b from-[#1a1f2d] to-[#2a2f3d] inline-block rounded-[3rem] p-5 shadow-2xl  duration-500">
                         <div className="overflow-hidden rounded-[2.5rem] w-[320px]">
                             <Image
                                 src="/images/stihni-to.png"
