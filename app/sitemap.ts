@@ -12,7 +12,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
             url: "https://minjiya.com/drinkapp",
             lastModified: new Date(),
             changeFrequency: "weekly",
-            priority: 0.8,
+            priority: 0.7,
+        },
+        {
+            url: "https://minjiya.com/stihni-to",
+            lastModified: new Date(),
+            changeFrequency: "weekly",
+            priority: 1,
         },
     ];
 }
