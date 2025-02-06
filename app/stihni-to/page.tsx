@@ -40,7 +40,7 @@ export default function StihniTo() {
 
             {/* Hero Section */}
             <div className="container mx-auto px-4 pt-32 pb-16">
-                <div className="text-center max-w-4xl mx-auto">
+                <div className="text-center max-w-6xl mx-auto">
                     <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-lg px-4 py-2 rounded-full mb-8">
                         <FaStar className="w-4 h-4 text-yellow-400" />
                         <h2 className="text-sm">
