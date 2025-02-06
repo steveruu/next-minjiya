@@ -1,6 +1,6 @@
 import Card from "@/components/Card";
 
-import union from "@/public/images/union.png";
+import stihni from "@/public/images/stihnito.png";
 import millers from "@/public/images/millers.png";
 import drinkapp from "@/public/images/drinkapp.png";
 import unknown from "@/public/images/unknown.png";
@@ -23,17 +23,17 @@ export default function OurProjects() {
                     unknown
                 />
                 <Card
+                    title="Stihni.to"
+                    description="Mobilní aplikace pro sledování spojů MHD v Liberci. Vyvinuta pomocí React Native a Expo s důrazem na přesnost a real-time."
+                    image={stihni}
+                    link="./stihni-to"
+                    unknown={false}
+                />
+                <Card
                     title="DrinkApp"
                     description="Aplikace pro Android a iOS zaměřená na sledování pitného režimu. Vyvinuta na platformách Expo a React Native."
                     image={drinkapp}
                     link={"./drinkapp"}
-                    unknown={false}
-                />
-                <Card
-                    title="UnionMC"
-                    description="Responsivní, minimalistická webová stránka pro UnionMC, vytvořená pomocí čistého HTML a CSS."
-                    image={union}
-                    link="https://unionmc.stvr.cz"
                     unknown={false}
                 />
                 <Card
@@ -43,7 +43,6 @@ export default function OurProjects() {
                     link={null}
                     unknown={false}
                 />
-
             </div>
         </div>
     );

@@ -241,7 +241,7 @@ export default function StihniTo() {
                         <p className="text-indigo-200/60 text-xs">
                             Vytvořil{" "}
                             <a
-                                href="https://github.com/steveruu"
+                                href="https://stvr.cz"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="hover:text-indigo-300 transition-colors duration-200"
