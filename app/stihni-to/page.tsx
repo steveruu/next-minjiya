@@ -3,12 +3,10 @@ import Image from "next/image";
 import { FaApple, FaStar } from "react-icons/fa";
 import { FaAndroid } from "react-icons/fa6";
 import { MdDownload } from "react-icons/md";
-import CountdownTimer from "./components/CountdownTimer";
 
 export default function StihniTo() {
     return (
         <div className="min-h-screen bg-gradient-to-b from-indigo-600 via-indigo-700 to-indigo-900 text-white">
-            {/* Navigation */}
             <nav className="absolute top-0 w-full z-10 bg-gradient-to-b from-black/20 to-transparent">
                 <div className="container mx-auto px-4 py-6 flex items-center justify-between">
                     <div className="flex items-center gap-2">
@@ -38,7 +36,6 @@ export default function StihniTo() {
                 </div>
             </nav>
 
-            {/* Hero Section */}
             <div className="container mx-auto px-4 pt-32 pb-16">
                 <div className="text-center max-w-6xl mx-auto">
                     <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-lg px-4 py-2 rounded-full mb-8">
@@ -82,7 +79,6 @@ export default function StihniTo() {
                     </div>
                 </div>
 
-                {/* App Preview with Animation */}
                 <div className="mt-20 text-center relative">
                     <div className="bg-gradient-to-b from-[#1a1f2d] to-[#2a2f3d] inline-block rounded-[3rem]  min-[400px]:p-5 shadow-2xl  duration-500">
                         <div className="overflow-hidden rounded-[2.5rem] w-[320px]">
@@ -99,7 +95,6 @@ export default function StihniTo() {
                     </div>
                 </div>
 
-                {/* Features Grid */}
                 <div
                     id="features"
                     className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mt-32"
@@ -165,48 +160,36 @@ export default function StihniTo() {
                     </div>
                 </div>
 
-                {/* Download Section */}
                 <div id="download" className="text-center mt-32">
                     <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-12 max-w-4xl mx-auto">
-                        <div className="mb-12 p-6 bg-indigo-500/10 rounded-xl inline-block">
-                            <h3 className="text-indigo-200 mb-2">
-                                Do spuštění zbývá
-                            </h3>
-                            <div className="text-4xl font-bold bg-gradient-to-r from-white to-indigo-200 bg-clip-text text-transparent">
-                                <CountdownTimer
-                                    targetDate={new Date("2025-02-11T00:00:00")}
-                                />
-                            </div>
-                        </div>
-
-                        <h2 className="text-3xl font-bold mb-6">Připraveni?</h2>
+                        <h2 className="text-3xl font-bold mb-6">Stáhněte si Stihni.to</h2>
                         <p className="text-indigo-200 mb-8 max-w-2xl mx-auto">
-                            Buďte mezi prvními, kteří vyzkouší revoluční způsob
-                            cestování MHD.
+                            Objevte revoluční způsob cestování libereckou MHD.
                         </p>
                         <div className="flex flex-col sm:flex-row justify-center gap-4">
-                            <button
-                                disabled
-                                className="group bg-white/50 text-indigo-600/50 px-8 py-4 rounded-xl font-semibold cursor-not-allowed flex items-center gap-2 w-full sm:w-auto justify-center"
+                            <a
+                                href="https://apps.apple.com/us/app/stihni-to/id6741535473"
+                                target="_blank"
+                                className="group bg-white hover:bg-white/90 text-indigo-600 px-8 py-4 rounded-xl font-semibold flex items-center gap-2 w-full sm:w-auto justify-center transition-colors"
                             >
-                                <FaApple className="w-5 h-5 " />
-                                Již brzy pro iOS
-                            </button>
-                            <button
-                                disabled
-                                className="group bg-white/5 text-white/50 px-8 py-4 rounded-xl font-semibold cursor-not-allowed flex items-center gap-2 w-full sm:w-auto justify-center"
+                                <FaApple className="w-5 h-5" />
+                                Stáhnout pro iOS
+                            </a>
+                            <a
+                                href="https://minjiya.com/bin/stihni-to.apk"
+                                target="_blank"
+                                className="group bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-xl font-semibold flex items-center gap-2 w-full sm:w-auto justify-center transition-colors"
                             >
                                 <FaAndroid className="w-5 h-5" />
-                                Již brzy pro Android
-                                <span className="bg-white/5 px-2 py-1 rounded text-sm ml-2 text-white/50">
+                                Stáhnout pro Android
+                                <span className="bg-white/10 px-2 py-1 rounded text-sm ml-2">
                                     .apk
                                 </span>
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>
 
-                {/* Footer with enhanced styling */}
                 <footer className="mt-32 mb-8 border-t border-indigo-200/10 pt-8">
                     <div className="flex flex-col items-center justify-center gap-4">
                         <div className="flex items-center gap-2 mb-4">
