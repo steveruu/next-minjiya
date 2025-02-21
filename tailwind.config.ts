@@ -19,6 +19,9 @@ const config: Config = {
                 mona: ["Mona Sans", "sans-serif"],
                 rubik: ["Rubik", "sans-serif"],
                 stick: ["Stick", "sans-serif"],
+                spaceGrotesk: ["Space Grotesk", "sans-serif"],
+                mono: ["Space Mono", "monospace"],
+                satoshi: ["Satoshi", "monospace"],
             },
             keyframes: {
                 marquee: {
