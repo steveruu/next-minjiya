@@ -34,7 +34,7 @@
 
     /* Custom scrollbar - Webkit browsers */
     ::-webkit-scrollbar {
-        width: 10px;
+        width: 8px;
     }
 
     ::-webkit-scrollbar-track {
@@ -42,7 +42,7 @@
     }
 
     ::-webkit-scrollbar-thumb {
-        @apply bg-purple-900 rounded-full;
+        @apply bg-purple-900;
     }
 
     ::-webkit-scrollbar-thumb:hover {

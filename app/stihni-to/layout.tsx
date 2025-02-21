@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Schibsted_Grotesk } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import "./globals.css"
 
 const schibsted = Schibsted_Grotesk({
     subsets: ["latin", "latin-ext"],

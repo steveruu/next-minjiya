@@ -44,7 +44,7 @@ export default function StihniTo() {
                             Nejlepší aplikace pro MHD v Liberci
                         </h2>
                     </div>
-                    <h1 className="text-6xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white to-indigo-200 bg-clip-text text-transparent">
+                    <h1 className="text-6xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white to-indigo-200 bg-clip-text text-transparent lg:h-[5rem]">
                         Stihni každý spoj v Liberci
                     </h1>
                     <h3 className="text-xl md:text-2xl text-indigo-200 mb-12 leading-relaxed">
