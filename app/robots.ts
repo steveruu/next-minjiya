@@ -5,7 +5,8 @@ export default function robots(): MetadataRoute.Robots {
         rules: {
             userAgent: "*",
             allow: ["/"],
-            disallow: ["/api", "/bahno"],
+            disallow: ["/api", "/newshyshow.php"],
         },
+        sitemap: "https://minjiya.com/sitemap.xml",
     };
 }
