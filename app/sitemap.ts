@@ -1,24 +1,30 @@
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    return [
+    const baseUrl = "https://minjiya.com";
+    const currentDate = new Date();
+
+    // Define common pages
+    const routes = [
         {
-            url: "https://minjiya.com",
-            lastModified: new Date(),
-            changeFrequency: "yearly",
+            url: baseUrl,
+            lastModified: currentDate,
+            changeFrequency: "monthly" as const,
             priority: 1,
         },
         {
-            url: "https://minjiya.com/drinkapp",
-            lastModified: new Date(),
-            changeFrequency: "weekly",
-            priority: 0.7,
+            url: `${baseUrl}/drinkapp`,
+            lastModified: currentDate,
+            changeFrequency: "weekly" as const,
+            priority: 0.9,
         },
         {
-            url: "https://minjiya.com/stihni-to",
-            lastModified: new Date(),
-            changeFrequency: "weekly",
-            priority: 1,
+            url: `${baseUrl}/stihni-to`,
+            lastModified: currentDate,
+            changeFrequency: "weekly" as const,
+            priority: 0.9,
         },
     ];
+
+    return routes;
 }

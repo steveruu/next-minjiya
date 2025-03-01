@@ -1,7 +1,30 @@
+'use client';
+
+import { useEffect, useState } from 'react';
+
 export default function CodePreview() {
+    const [isClient, setIsClient] = useState(false);
+
+    useEffect(() => {
+        setIsClient(true);
+    }, []);
+
+    // Simple pre-rendered version for initial load
+    if (!isClient) {
+        return (
+            <div className="w-full max-w-screen min-[552px]:w-full min-[552px]:mx-auto relative">
+                <div className="bg-zinc-950 rounded-xl shadow-xl p-4">
+                    <div className="h-[300px] flex items-center justify-center">
+                        <div className="w-10 h-10 border-4 border-purple-500 border-t-transparent rounded-full animate-spin" />
+                    </div>
+                </div>
+            </div>
+        );
+    }
+
     return (
         <div className="w-[calc(100vw-2rem)] max-w-screen min-[552px]:w-fit min-[552px]:mx-auto relative group scale-100">
-            {/* Background glow effect */}
+            {/* Background glow effect - only apply on client */}
             <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl blur-sm opacity-50" />
 
             {/* Main container */}

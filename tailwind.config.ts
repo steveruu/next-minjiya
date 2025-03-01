@@ -17,7 +17,6 @@ const config: Config = {
             fontFamily: {
                 sans: ["var(--font-schibsted)", "sans-serif"],
                 mona: ["Mona Sans", "sans-serif"],
-                rubik: ["Rubik", "sans-serif"],
                 stick: ["Stick", "sans-serif"],
                 spaceGrotesk: ["Space Grotesk", "sans-serif"],
                 mono: ["Space Mono", "monospace"],

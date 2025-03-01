@@ -1,14 +1,47 @@
 import Header from "@/components/Header";
-import CodePreview from "@/components/CodePreview";
-import Technologies from "@/components/Technologies";
+import dynamic from 'next/dynamic';
 import Image from "next/image";
 import { FaArrowDown, FaEnvelope, FaGithub, FaInstagram, FaCode, FaRocket } from "react-icons/fa6";
-import Form from "@/components/Form";
-import OurProjects from "@/components/OurProjects";
+import Script from "next/script";
+
+// Dynamic imports for components not needed on initial render
+const CodePreview = dynamic(() => import("@/components/CodePreview"), { ssr: true });
+const Technologies = dynamic(() => import("@/components/Technologies"), { ssr: false });
+const OurProjects = dynamic(() => import("@/components/OurProjects"), { ssr: false });
+const Form = dynamic(() => import("@/components/Form"), { ssr: false });
 
 export default function CzechHome() {
+    // JSON-LD structured data for better SEO
+    const websiteSchema = {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "minjiya",
+        "url": "https://minjiya.com",
+        "logo": "https://minjiya.com/mt.png",
+        "description": "Tvoříme webové a mobilní aplikace budoucnosti. Profesionální vývoj s důrazem na design a uživatelskou zkušenost.",
+        "sameAs": [
+            "https://github.com/minjiya",
+            "https://instagram.com/minjiya"
+        ],
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer support",
+            "email": "info@minjiya.com"
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "CZ"
+        }
+    };
+
     return (
         <>
+            <Script
+                id="organization-schema"
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+                strategy="afterInteractive"
+            />
             <div className="relative min-h-screen bg-gradient-to-b from-black to-purple-950/100 overflow-x-hidden">
                 <Header czech />
 
@@ -23,8 +56,8 @@ export default function CzechHome() {
                                         width={200}
                                         height={108}
                                         draggable={false}
-                                        loading="eager"
                                         className="transition-all duration-500 sm:w-[275px] sm:h-[148px]"
+                                        priority
                                     />
                                 </div>
 
@@ -79,7 +112,6 @@ export default function CzechHome() {
             </div>
 
             <div id="contact-us" className="relative bg-gradient-to-b from-purple-950  to-purpur/90 py-32">
-
                 <div className="container mx-auto px-4 relative">
                     <div className="max-w-3xl mx-auto">
                         <div className="flex items-center justify-center gap-4 mb-4">
@@ -103,6 +135,7 @@ export default function CzechHome() {
                                     href={href}
                                     className="flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/20"
                                     target="_blank"
+                                    rel="noopener noreferrer"
                                 >
                                     <Icon className="text-lg" />
                                     <span>{label}</span>
