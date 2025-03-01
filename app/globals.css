@@ -21,10 +21,6 @@
 }
 
 @layer base {
-    html {
-        scroll-behavior: smooth;
-    }
-
     body {
         @apply bg-[rgb(var(--background))] text-[rgb(var(--foreground))];
     }

@@ -23,8 +23,12 @@ export const metadata: Metadata = {
         "jízdní řády",
         "real-time",
         "aplikace",
+        "minjiya",
+        "minjiyalabs",
+        "stihni.to",
+        "steveruu"
     ],
-    authors: [{ name: "minjiya" }],
+    authors: [{ name: "minjiya" }, { name: "steveruu" }],
     openGraph: {
         title: "Stihni.to | Chytrý průvodce libereckou MHD",
         description: "Sledujte libereckou MHD v reálném čase",
