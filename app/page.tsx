@@ -49,7 +49,7 @@ export default function CzechHome() {
                             <div className="flex flex-col items-center lg:items-start lg:w-1/2 max-w-xl">
                                 <div className="relative group">
                                     <Image
-                                        src="mt.svg"
+                                        src="/mt2.webp"
                                         alt="minjiya"
                                         width={200}
                                         height={108}
