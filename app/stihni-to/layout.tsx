@@ -28,11 +28,15 @@ export const metadata: Metadata = {
         "stihni.to",
         "steveruu"
     ],
+    metadataBase: new URL("https://minjiya.com"),
     authors: [{ name: "minjiya" }, { name: "steveruu" }],
     openGraph: {
         title: "Stihni.to | Chytrý průvodce libereckou MHD",
         description: "Sledujte libereckou MHD v reálném čase",
-        images: ["/images/og-image.png"],
+        images: ["/images/stihnito.png"],
+    },
+    alternates: {
+        canonical: "https://minjiya.com/stihni-to",
     },
 };
 

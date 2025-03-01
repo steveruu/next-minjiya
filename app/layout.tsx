@@ -81,7 +81,10 @@ export const metadata: Metadata = {
       },
     ],
     creator: '@minjiya',
-  }
+  },
+  alternates: {
+    canonical: "https://minjiya.com",
+  },
 };
 
 export default function RootLayout({
@@ -93,7 +96,6 @@ export default function RootLayout({
     <html lang="cs" className="scroll-smooth">
       <head>
         <meta name="theme-color" content="#000000" />
-        <link rel="canonical" href="https://minjiya.com" />
         <link rel="preload" as="image" href="/mt.svg" />
       </head>
       <body

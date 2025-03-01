@@ -18,7 +18,7 @@ export const metadata: Metadata = {
         siteName: "DrinkApp",
         images: [
             {
-                url: "https://minjiya.com/images/drinkapp_2.png",
+                url: "https://minjiya.com/images/drinkapp.png",
                 width: 800,
                 height: 600,
                 alt: "DrinkApp Interface",
@@ -31,12 +31,15 @@ export const metadata: Metadata = {
         description: "Stay healthy and hydrated with DrinkApp. Monitor your daily water intake, set reminders, and achieve your wellness goals.",
         images: [
             {
-                url: "https://minjiya.com/images/drinkapp_2.png",
+                url: "https://minjiya.com/images/drinkapp.png",
                 width: 800,
                 height: 600,
                 alt: "DrinkApp Interface",
             },
         ],
+    },
+    alternates: {
+        canonical: "https://minjiya.com/drinkapp",
     },
 };
 
