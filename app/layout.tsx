@@ -95,7 +95,7 @@ export default function RootLayout({
   return (
     <html lang="cs" className="scroll-smooth">
       <head>
-        <meta name="theme-color" content="#000000" />
+        <meta name="theme-color" content="#a83bff" />
         <link rel="preload" as="image" href="/mt.svg" />
       </head>
       <body
