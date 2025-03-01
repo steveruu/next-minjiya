@@ -4,14 +4,12 @@ import Image from "next/image";
 import { FaArrowDown, FaEnvelope, FaGithub, FaInstagram, FaCode, FaRocket } from "react-icons/fa6";
 import Script from "next/script";
 
-// Dynamic imports for components not needed on initial render
 const CodePreview = dynamic(() => import("@/components/CodePreview"), { ssr: true });
 const Technologies = dynamic(() => import("@/components/Technologies"), { ssr: false });
 const OurProjects = dynamic(() => import("@/components/OurProjects"), { ssr: false });
 const Form = dynamic(() => import("@/components/Form"), { ssr: false });
 
 export default function CzechHome() {
-    // JSON-LD structured data for better SEO
     const websiteSchema = {
         "@context": "https://schema.org",
         "@type": "Organization",

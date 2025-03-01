@@ -1,25 +1,39 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import localFont from 'next/font/local';
 
 import "./globals.css";
-import { Rubik, Stick } from 'next/font/google'
 
-// Optimize font loading with display swap
-const rubik = Rubik({
-  subsets: ['latin'],
+// Use local fonts instead of Google Fonts to avoid network failures
+const rubik = localFont({
+  src: [
+    {
+      path: '../public/fonts/Rubik-Regular.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/Rubik-Medium.woff2',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/Rubik-Bold.woff2',
+      weight: '700',
+      style: 'normal',
+    }
+  ],
   display: 'swap',
-  preload: true,
-  fallback: ['system-ui', 'arial', 'sans-serif']
+  fallback: ['system-ui', 'arial', 'sans-serif'],
+  variable: '--font-rubik',
 });
 
-const stick = Stick({
-  subsets: ['latin'],
-  weight: '400',
+const stick = localFont({
+  src: '../public/fonts/Stick-Regular.woff2',
   variable: '--font-stick',
+  fallback: ['system-ui', 'arial', 'sans-serif'],
   display: 'swap',
-  preload: true,
-  fallback: ['monospace']
 });
 
 export const metadata: Metadata = {
@@ -80,9 +94,6 @@ export default function RootLayout({
       <head>
         <meta name="theme-color" content="#000000" />
         <link rel="canonical" href="https://minjiya.com" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
         <link rel="preload" as="image" href="/mt.svg" />
       </head>
       <body
