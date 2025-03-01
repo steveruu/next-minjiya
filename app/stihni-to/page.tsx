@@ -47,10 +47,10 @@ export default function StihniTo() {
                     <h1 className="text-6xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white to-indigo-200 bg-clip-text text-transparent lg:h-[5rem]">
                         Stihni každý spoj v Liberci
                     </h1>
-                    <h3 className="text-xl md:text-2xl text-indigo-200 mb-12 leading-relaxed">
+                    <h2 className="text-xl md:text-2xl text-indigo-200 mb-12 leading-relaxed">
                         Už žádné zbytečné čekání na zastávce! Víme přesně, kdy
                         vám jede další spoj!
-                    </h3>
+                    </h2>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
                         <a
                             href="#download"
@@ -104,9 +104,9 @@ export default function StihniTo() {
                             <div className="p-3 bg-indigo-500/20 rounded-lg group-hover:bg-indigo-500/30 transition-colors">
                                 <Clock className="w-6 h-6 text-indigo-300" />
                             </div>
-                            <h2 className="text-xl font-semibold ml-4">
+                            <h3 className="text-xl font-semibold ml-4">
                                 Víme, kdy vám to jede
-                            </h2>
+                            </h3>
                         </div>
                         <p className="text-indigo-200 leading-relaxed">
                             Žádné zbytečné čekání na zastávce. Ukážeme vám
@@ -119,9 +119,9 @@ export default function StihniTo() {
                             <div className="p-3 bg-indigo-500/20 rounded-lg group-hover:bg-indigo-500/30 transition-colors">
                                 <MapPin className="w-6 h-6 text-indigo-300" />
                             </div>
-                            <h2 className="text-xl font-semibold ml-4">
+                            <h3 className="text-xl font-semibold ml-4">
                                 Zastávky poblíž
-                            </h2>
+                            </h3>
                         </div>
                         <p className="text-indigo-200 leading-relaxed">
                             Ať jste kdekoli v Liberci nebo Jablonci, ukážeme vám
@@ -134,9 +134,9 @@ export default function StihniTo() {
                             <div className="p-3 bg-indigo-500/20 rounded-lg group-hover:bg-indigo-500/30 transition-colors">
                                 <BusFront className="w-6 h-6 text-indigo-300" />
                             </div>
-                            <h2 className="text-xl font-semibold ml-4">
+                            <h3 className="text-xl font-semibold ml-4">
                                 Všechny spoje pohromadě
-                            </h2>
+                            </h3>
                         </div>
                         <p className="text-indigo-200 leading-relaxed">
                             Tramvaje i autobusy na jednom místě. Jednoduchý
@@ -149,9 +149,9 @@ export default function StihniTo() {
                             <div className="p-3 bg-indigo-500/20 rounded-lg group-hover:bg-indigo-500/30 transition-colors">
                                 <Smartphone className="w-6 h-6 text-indigo-300" />
                             </div>
-                            <h2 className="text-xl font-semibold ml-4">
+                            <h3 className="text-xl font-semibold ml-4">
                                 Jednoduše a rychle
-                            </h2>
+                            </h3>
                         </div>
                         <p className="text-indigo-200 leading-relaxed">
                             Aplikace, se kterou si budete rozumět. Bez složitého
@@ -162,7 +162,7 @@ export default function StihniTo() {
 
                 <div id="download" className="text-center mt-32">
                     <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-12 max-w-4xl mx-auto">
-                        <h2 className="text-3xl font-bold mb-6">Stáhněte si Stihni.to</h2>
+                        <h3 className="text-3xl font-bold mb-6">Stáhněte si Stihni.to</h3>
                         <p className="text-indigo-200 mb-8 max-w-2xl mx-auto">
                             Objevte revoluční způsob cestování libereckou MHD.
                         </p>
