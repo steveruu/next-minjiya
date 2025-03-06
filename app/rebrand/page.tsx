@@ -16,31 +16,6 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import dynamic from "next/dynamic";
 
-function useIsomorphicLayoutEffect() {
-    const isomorphicEffect =
-        typeof window !== "undefined" ? useEffect : useEffect;
-    return isomorphicEffect;
-}
-
-function useLowEndDevice() {
-    const [isLowEnd, setIsLowEnd] = useState(false);
-
-    const isomorphicEffect = useIsomorphicLayoutEffect();
-
-    isomorphicEffect(() => {
-        // Check if device is low-end based on hardware concurrency
-        const isLowEndDevice =
-            navigator.hardwareConcurrency <= 4 ||
-            /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-                navigator.userAgent
-            );
-
-        setIsLowEnd(isLowEndDevice);
-    }, []);
-
-    return isLowEnd;
-}
-
 // Enhanced AnalogClock component with performance optimizations
 const AnalogClock = memo(function AnalogClock() {
     const [time, setTime] = useState(new Date());
