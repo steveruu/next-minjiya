@@ -10,8 +10,8 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { motion, AnimatePresence } from "framer-motion";
-import { Clock, Sparkles, ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
+import { Clock } from "lucide-react";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
