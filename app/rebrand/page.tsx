@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, memo, useCallback } from "react";
+import { useEffect, useState, memo } from "react";
 import {
     Card,
     CardContent,
@@ -296,17 +296,6 @@ const OptimizedBackground = memo(function OptimizedBackground() {
 
 // Wrap the main component with memo for performance
 export default memo(function Rebrand() {
-    const prefersReducedMotion = useReducedMotion();
-    const isLowEndDevice = useLowEndDevice();
-
-    // Reduce animation complexity for low-end devices
-    const shouldOptimizePerformance = prefersReducedMotion || isLowEndDevice;
-
-    // Use a callback to prevent unnecessary re-renders
-    const handleBackClick = useCallback(() => {
-        // Navigation logic here
-    }, []);
-
     return (
         <div className="relative min-h-screen overflow-hidden">
             {/* Enhanced background with animated elements */}
