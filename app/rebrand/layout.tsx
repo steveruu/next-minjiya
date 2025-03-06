@@ -1,21 +1,34 @@
 import type { Metadata } from "next";
 import { Outfit, Playfair_Display } from "next/font/google";
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/theme-provider";
 import "../globals.css";
+import dynamic from "next/dynamic";
 
-// Modern sans-serif font for body text
+// Dynamically import analytics components with no SSR to reduce initial load
+const Analytics = dynamic(
+    () => import("@vercel/analytics/react").then((mod) => mod.Analytics),
+    { ssr: false }
+);
+
+const SpeedInsights = dynamic(
+    () =>
+        import("@vercel/speed-insights/next").then((mod) => mod.SpeedInsights),
+    { ssr: false }
+);
+
+// Modern sans-serif font for body text with display swap
 const outfit = Outfit({
     subsets: ["latin"],
     variable: "--font-sans",
+    display: "swap",
 });
 
-// Elegant serif font for headings
+// Elegant serif font for headings with display swap
 const playfair = Playfair_Display({
     subsets: ["latin"],
     variable: "--font-serif",
+    display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -44,7 +57,7 @@ export default function RebrandLayout({
         >
             <div
                 className={cn(
-                    "min-h-screen bg-background font-sans antialiased selection:bg-primary/20 selection:text-primary",
+                    "min-h-screen bg-background font-sans antialiased selection:bg-primary/20 selection:text-primary will-change-auto",
                     outfit.variable,
                     playfair.variable
                 )}

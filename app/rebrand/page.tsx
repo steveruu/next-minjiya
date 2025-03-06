@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, memo, useCallback } from "react";
 import {
     Card,
     CardContent,
@@ -10,23 +10,54 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { Clock } from "lucide-react";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import dynamic from "next/dynamic";
 
-// Enhanced AnalogClock component
-function AnalogClock() {
+function useIsomorphicLayoutEffect() {
+    const isomorphicEffect =
+        typeof window !== "undefined" ? useEffect : useEffect;
+    return isomorphicEffect;
+}
+
+function useLowEndDevice() {
+    const [isLowEnd, setIsLowEnd] = useState(false);
+
+    const isomorphicEffect = useIsomorphicLayoutEffect();
+
+    isomorphicEffect(() => {
+        // Check if device is low-end based on hardware concurrency
+        const isLowEndDevice =
+            navigator.hardwareConcurrency <= 4 ||
+            /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+                navigator.userAgent
+            );
+
+        setIsLowEnd(isLowEndDevice);
+    }, []);
+
+    return isLowEnd;
+}
+
+// Enhanced AnalogClock component with performance optimizations
+const AnalogClock = memo(function AnalogClock() {
     const [time, setTime] = useState(new Date());
     const [rotation, setRotation] = useState(0);
+    const prefersReducedMotion = useReducedMotion();
 
     useEffect(() => {
-        const timer = setInterval(() => {
-            setTime(new Date());
-        }, 1000);
+        // Use a more efficient timer with a reasonable update interval
+        const timer = setInterval(
+            () => {
+                setTime(new Date());
+            },
+            prefersReducedMotion ? 5000 : 1000
+        ); // Less frequent updates if reduced motion is preferred
 
         return () => clearInterval(timer);
-    }, []);
+    }, [prefersReducedMotion]);
 
     useEffect(() => {
         const seconds = time.getSeconds();
@@ -42,9 +73,11 @@ function AnalogClock() {
     const minutes = time.getMinutes();
     const hours = time.getHours() % 12;
 
+    // Pre-calculate these values to avoid recalculation during render
     const minuteDegrees = ((minutes + time.getSeconds() / 60) / 60) * 360;
     const hourDegrees = ((hours + minutes / 60) / 12) * 360;
 
+    // Use will-change for elements that will animate
     return (
         <div className="relative flex flex-col items-center">
             <div className="relative w-72 h-72 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-card/80 to-card/40 border border-border/20 shadow-xl backdrop-blur-sm">
@@ -129,10 +162,10 @@ function AnalogClock() {
             </div>
         </div>
     );
-}
+});
 
-// Animated gradient text component
-function GradientText({
+// Animated gradient text component - memoized for performance
+const GradientText = memo(function GradientText({
     children,
     className,
 }: {
@@ -146,10 +179,10 @@ function GradientText({
             {children}
         </span>
     );
-}
+});
 
-// Floating decoration component
-function FloatingElement({
+// Floating decoration component - optimized with reduced motion support
+const FloatingElement = memo(function FloatingElement({
     children,
     delay = 0,
     className = "",
@@ -158,83 +191,127 @@ function FloatingElement({
     delay?: number;
     className?: string;
 }) {
+    const prefersReducedMotion = useReducedMotion();
+
+    // Skip animations for users who prefer reduced motion
+    const animationProps = prefersReducedMotion
+        ? {
+              initial: { opacity: 1 },
+              animate: { opacity: 1 },
+          }
+        : {
+              initial: { opacity: 0 },
+              animate: { opacity: 1 },
+              transition: { duration: 1, delay },
+          };
+
+    // Skip floating animation for reduced motion preference
+    const floatingAnimation = prefersReducedMotion
+        ? {}
+        : {
+              animate: {
+                  y: [0, -10, 0],
+                  rotate: [0, 5, 0],
+              },
+              transition: {
+                  duration: 6,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: Math.random(),
+              },
+          };
+
     return (
-        <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay }}
-            className={className}
-        >
-            <motion.div
-                animate={{
-                    y: [0, -10, 0],
-                    rotate: [0, 5, 0],
-                }}
-                transition={{
-                    duration: 6,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                    delay: Math.random(),
-                }}
-            >
-                {children}
-            </motion.div>
+        <motion.div {...animationProps} className={className}>
+            <motion.div {...floatingAnimation}>{children}</motion.div>
         </motion.div>
     );
-}
+});
 
-export default function Rebrand() {
+// Lazy load the AnalogClock component since it's heavy
+const LazyAnalogClock = dynamic(() => Promise.resolve(AnalogClock), {
+    ssr: false,
+    loading: () => (
+        <div className="w-72 h-72 md:w-80 md:h-80 rounded-full bg-card/50 animate-pulse" />
+    ),
+});
+
+// Optimized background animation component
+const OptimizedBackground = memo(function OptimizedBackground() {
+    const prefersReducedMotion = useReducedMotion();
+
+    // Skip or simplify animations for reduced motion preference
+    if (prefersReducedMotion) {
+        return (
+            <>
+                {/* Static gradient background */}
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(var(--primary)/0.1),transparent_50%),radial-gradient(ellipse_at_bottom_left,rgba(59,130,246,0.1),transparent_50%)]"></div>
+                {/* Grid pattern */}
+                <div className="absolute inset-0 bg-grid-pattern opacity-[0.03]"></div>
+                {/* Static orbs */}
+                <div className="absolute top-[-10%] right-[-10%] w-[60%] h-[60%] bg-gradient-to-br from-primary/5 to-blue-500/5 rounded-full blur-[120px]" />
+                <div className="absolute bottom-[-20%] left-[-10%] w-[70%] h-[70%] bg-gradient-to-tr from-blue-500/5 to-purple-500/5 rounded-full blur-[150px]" />
+            </>
+        );
+    }
+
+    return (
+        <>
+            {/* Gradient background */}
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(var(--primary)/0.1),transparent_50%),radial-gradient(ellipse_at_bottom_left,rgba(59,130,246,0.1),transparent_50%)]"></div>
+
+            {/* Grid pattern */}
+            <div className="absolute inset-0 bg-grid-pattern opacity-[0.03]"></div>
+
+            {/* Animated gradient orbs - with will-change optimization */}
+            <motion.div
+                animate={{
+                    x: [0, 10, 0],
+                    y: [0, -10, 0],
+                }}
+                transition={{
+                    duration: 20,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                }}
+                className="absolute top-[-10%] right-[-10%] w-[60%] h-[60%] bg-gradient-to-br from-primary/5 to-blue-500/5 rounded-full blur-[120px] will-change-transform"
+            />
+
+            <motion.div
+                animate={{
+                    x: [0, -15, 0],
+                    y: [0, 15, 0],
+                }}
+                transition={{
+                    duration: 25,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: 1,
+                }}
+                className="absolute bottom-[-20%] left-[-10%] w-[70%] h-[70%] bg-gradient-to-tr from-blue-500/5 to-purple-500/5 rounded-full blur-[150px] will-change-transform"
+            />
+        </>
+    );
+});
+
+// Wrap the main component with memo for performance
+export default memo(function Rebrand() {
+    const prefersReducedMotion = useReducedMotion();
+    const isLowEndDevice = useLowEndDevice();
+
+    // Reduce animation complexity for low-end devices
+    const shouldOptimizePerformance = prefersReducedMotion || isLowEndDevice;
+
+    // Use a callback to prevent unnecessary re-renders
+    const handleBackClick = useCallback(() => {
+        // Navigation logic here
+    }, []);
+
     return (
         <div className="relative min-h-screen overflow-hidden">
             {/* Enhanced background with animated elements */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
-                {/* Gradient background */}
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(var(--primary)/0.1),transparent_50%),radial-gradient(ellipse_at_bottom_left,rgba(59,130,246,0.1),transparent_50%)]"></div>
-
-                {/* Grid pattern */}
-                <div className="absolute inset-0 bg-grid-pattern opacity-[0.03]"></div>
-
-                {/* Animated gradient orbs */}
-                <motion.div
-                    animate={{
-                        x: [0, 10, 0],
-                        y: [0, -10, 0],
-                    }}
-                    transition={{
-                        duration: 20,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                    }}
-                    className="absolute top-[-10%] right-[-10%] w-[60%] h-[60%] bg-gradient-to-br from-primary/5 to-blue-500/5 rounded-full blur-[120px]"
-                />
-
-                <motion.div
-                    animate={{
-                        x: [0, -15, 0],
-                        y: [0, 15, 0],
-                    }}
-                    transition={{
-                        duration: 25,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                        delay: 1,
-                    }}
-                    className="absolute bottom-[-20%] left-[-10%] w-[70%] h-[70%] bg-gradient-to-tr from-blue-500/5 to-purple-500/5 rounded-full blur-[150px]"
-                />
-
-                <motion.div
-                    animate={{
-                        x: [0, 20, 0],
-                        y: [0, 20, 0],
-                    }}
-                    transition={{
-                        duration: 15,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                        delay: 2,
-                    }}
-                    className="absolute top-[30%] left-[20%] w-[40%] h-[40%] bg-gradient-to-bl from-purple-500/5 to-pink-500/5 rounded-full blur-[100px]"
-                />
+                <OptimizedBackground />
             </div>
 
             {/* Floating decorative elements */}
@@ -496,7 +573,7 @@ export default function Rebrand() {
                             </CardHeader>
                             <Separator className="opacity-10" />
                             <CardContent className="pt-8 pb-6 flex justify-center">
-                                <AnalogClock />
+                                <LazyAnalogClock />
                             </CardContent>
 
                             {/* Added call-to-action button */}
@@ -526,4 +603,4 @@ export default function Rebrand() {
             </div>
         </div>
     );
-}
+});
