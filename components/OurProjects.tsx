@@ -15,13 +15,13 @@ export default function OurProjects() {
                 Naše projekty
             </p>
             <div className="flex flex-row flex-wrap gap-4 mt-10 mb-10 justify-center items-center max-w-[80%] mx-auto">
-                <Card
+                {/* <Card
                     title="???"
                     description="*&^%$#@!~`+=-_:;<>?{}[]()|\\/.,><!@#$%^&*()_+{}|:<>?[];',./`~!@#$%^&*()_+|}{:?><~`!@#$%^&*()_+|}{:?><~`"
                     image={unknown}
                     link={null}
                     unknown
-                />
+                /> */}
                 <Card
                     title="Stihni.to"
                     description="Mobilní aplikace pro sledování spojů MHD v Liberci. Vyvinuta pomocí React Native a Expo s důrazem na přesnost a real-time."
