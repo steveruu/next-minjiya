@@ -3,7 +3,7 @@ import Card from "@/components/Card";
 import stihni from "@/public/images/stihnito.png";
 import millers from "@/public/images/millers.png";
 import drinkapp from "@/public/images/drinkapp.png";
-import unknown from "@/public/images/unknown.png";
+// import unknown from "@/public/images/unknown.png";
 
 export default function OurProjects() {
     return (
