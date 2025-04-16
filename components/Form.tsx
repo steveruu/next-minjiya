@@ -111,11 +111,10 @@ const Form = ({ czech }: { czech: boolean }) => {
                         type="submit"
                         className="p-4 bg-white text-purple-900 rounded-lg font-semibold 
                         disabled:bg-white/20 disabled:text-white/40
-                        hover:bg-purple-50 transform hover:-translate-y-1 
-                        hover:shadow-lg hover:shadow-white/20
-                        transition-all duration-300 
-                        disabled:hover:bg-white/20 disabled:hover:transform-none 
-                        disabled:cursor-not-allowed"
+                         transform hover:-translate-y-0.5 
+                         hover:shadow-white/20
+                        transition-all duration-300  
+                        disabled:cursor-not-allowed disabled:hover:transform-none"
                         disabled={!isVerified}
                     >
                         {czech ? "Odeslat" : "Send"}
