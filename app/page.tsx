@@ -67,7 +67,7 @@ export default function CzechHome() {
                                         width={200}
                                         height={108}
                                         draggable={false}
-                                        className="transition-all duration-500 sm:w-[275px] sm:h-[148px] mt-10 sm:mt-0"
+                                        className="transition-all duration-500 sm:w-[275px] sm:h-[148px] xl:w-[300px] xl:h-[160px] mt-10 sm:mt-0 xl:-ml-5"
                                         priority
                                     />
                                 </motion.div>
@@ -86,7 +86,7 @@ export default function CzechHome() {
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
-                                    className="hidden md:block text-2xl font-stick text-white/80 tracking-wider hover:text-white transition-colors duration-300"
+                                    className="hidden md:block text-xl font-stick text-white tracking-wider"
                                 >
                                     みんじや
                                 </motion.h2>
