@@ -67,7 +67,7 @@ export default function CzechHome() {
                                         width={200}
                                         height={108}
                                         draggable={false}
-                                        className="transition-all duration-500 sm:w-[275px] sm:h-[148px]"
+                                        className="transition-all duration-500 sm:w-[275px] sm:h-[148px] mt-10 sm:mt-0"
                                         priority
                                     />
                                 </motion.div>
