@@ -15,10 +15,10 @@ export default function Card({
     unknown: boolean | null
 }) {
     return (
-        <div className={`max-w-sm ${unknown ? 'bg-[#134E16]' : 'bg-white'} border border-gray-200 rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 overflow-hidden`}>
+        <div className={`max-w-sm bg-white border border-gray-200 rounded-t-md shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 overflow-hidden`}>
             <div className="relative overflow-hidden">
                 <Image
-                    className="rounded-t-xl"
+                    className="rounded-t-md"
                     src={image}
                     alt={title}
                     loading="lazy"
@@ -27,17 +27,17 @@ export default function Card({
             </div>
             <div className="p-6">
                 <div>
-                    <h5 className={`mb-3 text-2xl font-bold tracking-tight ${unknown ? 'text-white' : 'text-gray-900'} font-rubik`}>
+                    <h5 className={`mb-3 text-2xl font-bold tracking-tight text-minjiya font-rubik`}>
                         {title}
                     </h5>
                 </div>
-                <p className={`mb-5 font-normal ${unknown ? 'text-white/90' : 'text-gray-600'} font-rubik leading-relaxed`}>
+                <p className={`mb-5 font-normal text-minjiya font-rubik leading-relaxed`}>
                     {description}
                 </p>
                 {link ? (
                     <a
                         href={link}
-                        className="inline-flex items-center px-4 py-2.5 text-sm font-medium text-white bg-purpur rounded-lg hover:bg-purple-700 transition-all duration-300 focus:ring-4 focus:ring-purple-200 shadow-sm hover:shadow-md"
+                        className="inline-flex items-center px-4 py-2.5 text-sm font-medium text-white bg-minjiya rounded-lg hover:bg-minjiya/80 transition-all duration-300 focus:ring-4 focus:ring-minjiya/20 shadow-sm hover:shadow-md"
                     >
                         Přejít na stránku
                         <svg

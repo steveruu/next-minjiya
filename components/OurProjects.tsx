@@ -10,7 +10,7 @@ export default function OurProjects() {
         <div className="w-full">
             <p
                 id="projects"
-                className="pt-10 text-center text-3xl font-semibold font-rubik"
+                className="pt-10 text-center text-3xl font-bold font-rubik text-minjiya tracking-tight"
             >
                 Naše projekty
             </p>

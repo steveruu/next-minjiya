@@ -11,9 +11,8 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { motion, useReducedMotion } from "framer-motion";
-import { Clock } from "lucide-react";
+import { Clock, ArrowLeft } from "lucide-react";
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
 import dynamic from "next/dynamic";
 
 // Enhanced AnalogClock component with performance optimizations
@@ -55,7 +54,7 @@ const AnalogClock = memo(function AnalogClock() {
     // Use will-change for elements that will animate
     return (
         <div className="relative flex flex-col items-center">
-            <div className="relative w-72 h-72 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-card/80 to-card/40 border border-border/20 shadow-xl backdrop-blur-sm">
+            <div className="relative w-72 h-72 md:w-80 md:h-80 rounded-none bg-minjiya border border-white/5 shadow-xl">
                 {/* Clock markers */}
                 {[...Array(12)].map((_, i) => (
                     <div
@@ -69,7 +68,7 @@ const AnalogClock = memo(function AnalogClock() {
                             initial={{ opacity: 0, height: 0 }}
                             animate={{ opacity: 1, height: 10 }}
                             transition={{ delay: i * 0.05, duration: 0.5 }}
-                            className="absolute left-1/2 -ml-[1px] w-1 bg-foreground/30"
+                            className="absolute left-1/2 -ml-[1px] w-1 bg-white/30"
                             style={{ top: "4px" }}
                         ></motion.div>
                     </div>
@@ -87,7 +86,7 @@ const AnalogClock = memo(function AnalogClock() {
                                 }}
                             >
                                 <div
-                                    className="absolute left-1/2 -ml-[0.5px] w-[1px] h-1.5 bg-foreground/10"
+                                    className="absolute left-1/2 -ml-[0.5px] w-[1px] h-1.5 bg-white/10"
                                     style={{ top: "2px" }}
                                 ></div>
                             </div>
@@ -95,12 +94,11 @@ const AnalogClock = memo(function AnalogClock() {
                 )}
 
                 {/* Clock center */}
-                <div className="absolute w-8 h-8 bg-background/80 rounded-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 border border-border/30 shadow-md"></div>
-                <div className="absolute w-4 h-4 bg-gradient-to-br from-primary to-primary/80 rounded-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 shadow-[0_0_10px_rgba(var(--primary)/0.3)]"></div>
+                <div className="absolute w-4 h-4 bg-white/80 rounded-none top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10"></div>
 
                 {/* Hour hand */}
                 <motion.div
-                    className="absolute w-2.5 h-14 bg-gradient-to-t from-foreground/90 to-foreground/60 origin-bottom left-1/2 -ml-[1.25px] bottom-1/2 rounded-full shadow-sm"
+                    className="absolute w-2 h-14 bg-white origin-bottom left-1/2 -ml-1 bottom-1/2 rounded-none"
                     style={{
                         transform: `rotate(${hourDegrees}deg)`,
                     }}
@@ -110,7 +108,7 @@ const AnalogClock = memo(function AnalogClock() {
 
                 {/* Minute hand */}
                 <motion.div
-                    className="absolute w-2 h-20 bg-gradient-to-t from-foreground/80 to-foreground/50 origin-bottom left-1/2 -ml-1 bottom-1/2 rounded-full shadow-sm"
+                    className="absolute w-1.5 h-20 bg-white/80 origin-bottom left-1/2 -ml-[0.75px] bottom-1/2 rounded-none"
                     style={{
                         transform: `rotate(${minuteDegrees}deg)`,
                     }}
@@ -120,7 +118,7 @@ const AnalogClock = memo(function AnalogClock() {
 
                 {/* Second hand */}
                 <motion.div
-                    className="absolute w-1 h-24 bg-gradient-to-t from-primary to-primary/80 origin-bottom left-1/2 -ml-[0.5px] bottom-1/2 rounded-full shadow-[0_0_5px_rgba(var(--primary)/0.2)]"
+                    className="absolute w-[1px] h-24 bg-white origin-bottom left-1/2 -ml-[0.5px] bottom-1/2"
                     style={{
                         transform: `rotate(${rotation}deg)`,
                     }}
@@ -131,15 +129,12 @@ const AnalogClock = memo(function AnalogClock() {
                         ease: "linear",
                     }}
                 />
-
-                {/* Outer ring glow */}
-                <div className="absolute inset-0 rounded-full border border-primary/10 shadow-[0_0_30px_rgba(var(--primary)/0.1)]"></div>
             </div>
         </div>
     );
 });
 
-// Animated gradient text component - memoized for performance
+// Text component for consistency
 const GradientText = memo(function GradientText({
     children,
     className,
@@ -149,57 +144,10 @@ const GradientText = memo(function GradientText({
 }) {
     return (
         <span
-            className={`bg-clip-text text-transparent bg-gradient-to-r from-primary via-blue-400 to-purple-500 animate-gradient ${className}`}
+            className={`text-white font-bold ${className}`}
         >
             {children}
         </span>
-    );
-});
-
-// Floating decoration component - optimized with reduced motion support
-const FloatingElement = memo(function FloatingElement({
-    children,
-    delay = 0,
-    className = "",
-}: {
-    children: React.ReactNode;
-    delay?: number;
-    className?: string;
-}) {
-    const prefersReducedMotion = useReducedMotion();
-
-    // Skip animations for users who prefer reduced motion
-    const animationProps = prefersReducedMotion
-        ? {
-              initial: { opacity: 1 },
-              animate: { opacity: 1 },
-          }
-        : {
-              initial: { opacity: 0 },
-              animate: { opacity: 1 },
-              transition: { duration: 1, delay },
-          };
-
-    // Skip floating animation for reduced motion preference
-    const floatingAnimation = prefersReducedMotion
-        ? {}
-        : {
-              animate: {
-                  y: [0, -10, 0],
-                  rotate: [0, 5, 0],
-              },
-              transition: {
-                  duration: 6,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: Math.random(),
-              },
-          };
-
-    return (
-        <motion.div {...animationProps} className={className}>
-            <motion.div {...floatingAnimation}>{children}</motion.div>
-        </motion.div>
     );
 });
 
@@ -207,64 +155,19 @@ const FloatingElement = memo(function FloatingElement({
 const LazyAnalogClock = dynamic(() => Promise.resolve(AnalogClock), {
     ssr: false,
     loading: () => (
-        <div className="w-72 h-72 md:w-80 md:h-80 rounded-full bg-card/50 animate-pulse" />
+        <div className="w-72 h-72 md:w-80 md:h-80 rounded-none bg-minjiya/50 animate-pulse" />
     ),
 });
 
-// Optimized background animation component
+// Optimized background component
 const OptimizedBackground = memo(function OptimizedBackground() {
-    const prefersReducedMotion = useReducedMotion();
-
-    // Skip or simplify animations for reduced motion preference
-    if (prefersReducedMotion) {
-        return (
-            <>
-                {/* Static gradient background */}
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(var(--primary)/0.1),transparent_50%),radial-gradient(ellipse_at_bottom_left,rgba(59,130,246,0.1),transparent_50%)]"></div>
-                {/* Grid pattern */}
-                <div className="absolute inset-0 bg-grid-pattern opacity-[0.03]"></div>
-                {/* Static orbs */}
-                <div className="absolute top-[-10%] right-[-10%] w-[60%] h-[60%] bg-gradient-to-br from-primary/5 to-blue-500/5 rounded-full blur-[120px]" />
-                <div className="absolute bottom-[-20%] left-[-10%] w-[70%] h-[70%] bg-gradient-to-tr from-blue-500/5 to-purple-500/5 rounded-full blur-[150px]" />
-            </>
-        );
-    }
-
     return (
         <>
-            {/* Gradient background */}
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(var(--primary)/0.1),transparent_50%),radial-gradient(ellipse_at_bottom_left,rgba(59,130,246,0.1),transparent_50%)]"></div>
+            {/* Grid pattern is handled by the bg-grid-pattern class */}
 
-            {/* Grid pattern */}
-            <div className="absolute inset-0 bg-grid-pattern opacity-[0.03]"></div>
-
-            {/* Animated gradient orbs - with will-change optimization */}
-            <motion.div
-                animate={{
-                    x: [0, 10, 0],
-                    y: [0, -10, 0],
-                }}
-                transition={{
-                    duration: 20,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                }}
-                className="absolute top-[-10%] right-[-10%] w-[60%] h-[60%] bg-gradient-to-br from-primary/5 to-blue-500/5 rounded-full blur-[120px] will-change-transform"
-            />
-
-            <motion.div
-                animate={{
-                    x: [0, -15, 0],
-                    y: [0, 15, 0],
-                }}
-                transition={{
-                    duration: 25,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                    delay: 1,
-                }}
-                className="absolute bottom-[-20%] left-[-10%] w-[70%] h-[70%] bg-gradient-to-tr from-blue-500/5 to-purple-500/5 rounded-full blur-[150px] will-change-transform"
-            />
+            {/* Subtle highlight */}
+            <div className="absolute top-[-5%] right-[-5%] w-[40%] h-[40%] bg-white/[0.01] rounded-none blur-[100px]" />
+            <div className="absolute bottom-[-5%] left-[-5%] w-[40%] h-[40%] bg-white/[0.01] rounded-none blur-[100px]" />
         </>
     );
 });
@@ -272,83 +175,11 @@ const OptimizedBackground = memo(function OptimizedBackground() {
 // Wrap the main component with memo for performance
 export default memo(function Rebrand() {
     return (
-        <div className="relative min-h-screen overflow-hidden">
+        <div className="relative min-h-screen overflow-hidden bg-minjiya">
             {/* Enhanced background with animated elements */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
                 <OptimizedBackground />
             </div>
-
-            {/* Floating decorative elements */}
-            <FloatingElement
-                delay={0.5}
-                className="absolute top-[15%] right-[15%] text-foreground/10 w-16 h-16 hidden md:block"
-            >
-                <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                >
-                    <circle cx="12" cy="12" r="10" />
-                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-                    <path d="M2 12h20" />
-                </svg>
-            </FloatingElement>
-
-            <FloatingElement
-                delay={0.8}
-                className="absolute bottom-[20%] left-[10%] text-foreground/10 w-12 h-12 hidden md:block"
-            >
-                <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                >
-                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                </svg>
-            </FloatingElement>
-
-            <FloatingElement
-                delay={1.2}
-                className="absolute top-[40%] left-[5%] text-foreground/10 w-10 h-10 hidden md:block"
-            >
-                <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                >
-                    <rect x="3" y="3" width="18" height="18" rx="2" />
-                    <path d="M3 9h18" />
-                    <path d="M9 21V9" />
-                </svg>
-            </FloatingElement>
-
-            <FloatingElement
-                delay={1.5}
-                className="absolute top-[60%] right-[8%] text-foreground/10 w-14 h-14 hidden md:block"
-            >
-                <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                >
-                    <circle cx="12" cy="12" r="10" />
-                    <path d="M8 14s1.5 2 4 2 4-2 4-2" />
-                    <line x1="9" y1="9" x2="9.01" y2="9" />
-                    <line x1="15" y1="9" x2="15.01" y2="9" />
-                </svg>
-            </FloatingElement>
 
             <div className="container max-w-5xl mx-auto px-4 py-16 md:py-24 flex flex-col items-center justify-center min-h-screen">
                 {/* Logo badge with animation */}
@@ -361,9 +192,9 @@ export default memo(function Rebrand() {
                     <Link href="/">
                         <Badge
                             variant="outline"
-                            className="group px-4 py-1.5 text-sm tracking-wide font-medium backdrop-blur-md bg-background/40 border-primary/20 shadow-[0_0_15px_rgba(var(--primary)/0.2)] hover:bg-background/50 transition-all duration-300 flex items-center"
+                            className="group px-4 py-1.5 text-xs uppercase tracking-widest font-medium bg-minjiya/80 border-white/5 hover:bg-minjiya/90 transition-all duration-300 flex items-center rounded-none"
                         >
-                            <ArrowLeft className="w-3.5 h-3.5 mr-1.5 text-primary transition-transform group-hover:-translate-x-0.5" />
+                            <ArrowLeft className="w-3.5 h-3.5 mr-1.5 text-white transition-transform group-hover:-translate-x-0.5" />
                             minjiya
                         </Badge>
                     </Link>
@@ -384,7 +215,7 @@ export default memo(function Rebrand() {
                         >
                             <Badge
                                 variant="secondary"
-                                className="px-5 py-2 text-sm bg-secondary/30 hover:bg-secondary/40 font-medium border border-border/30 backdrop-blur-sm shadow-lg transition-all duration-300"
+                                className="px-5 py-1.5 text-xs uppercase tracking-widest bg-white/5 hover:bg-white/10 font-medium border-none backdrop-blur-sm shadow-lg transition-all duration-300 rounded-none"
                             >
                                 <motion.span
                                     animate={{ opacity: [0.7, 1, 0.7] }}
@@ -408,62 +239,19 @@ export default memo(function Rebrand() {
                                     ease: [0.22, 1, 0.36, 1],
                                     delay: 0.3,
                                 }}
-                                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold leading-tight"
+                                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight"
                             >
                                 čas na{" "}
                                 <span className="relative inline-block">
                                     <GradientText>rebrand</GradientText>
-                                    {/* Repositioned decorative squiggle as pen/pencil underline */}
+                                    {/* Simple underline */}
                                     <motion.div
-                                        initial={{ opacity: 0, scaleX: 0 }}
-                                        animate={{ opacity: 1, scaleX: 1 }}
-                                        transition={{ duration: 1, delay: 0.9 }}
-                                        className="absolute -bottom-1 left-0 w-full h-3"
+                                        initial={{ scaleX: 0 }}
+                                        animate={{ scaleX: 1 }}
+                                        transition={{ duration: 0.8, delay: 0.9 }}
+                                        className="absolute -bottom-1 left-0 w-full h-[2px] bg-white/40"
                                         style={{ transformOrigin: "left" }}
-                                    >
-                                        <svg
-                                            className="w-full h-full"
-                                            viewBox="0 0 100 12"
-                                            fill="none"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            preserveAspectRatio="none"
-                                        >
-                                            <motion.path
-                                                initial={{ pathLength: 0 }}
-                                                animate={{ pathLength: 1 }}
-                                                transition={{
-                                                    duration: 1.8,
-                                                    delay: 1,
-                                                    ease: "easeInOut",
-                                                }}
-                                                d="M0 7C10 3.5 15 9 25 7.5C35 6 40 2 50 4C60 6 65 9 75 7C85 5 90 3 100 5"
-                                                stroke="url(#pen-underline-gradient)"
-                                                strokeWidth="3"
-                                                strokeLinecap="butt"
-                                                fill="none"
-                                            />
-                                            <defs>
-                                                <linearGradient
-                                                    id="pen-underline-gradient"
-                                                    x1="0"
-                                                    y1="0"
-                                                    x2="100"
-                                                    y2="0"
-                                                    gradientUnits="userSpaceOnUse"
-                                                >
-                                                    <stop stopColor="#3B82F6" />
-                                                    <stop
-                                                        offset="0.5"
-                                                        stopColor="#8B5CF6"
-                                                    />
-                                                    <stop
-                                                        offset="1"
-                                                        stopColor="#EC4899"
-                                                    />
-                                                </linearGradient>
-                                            </defs>
-                                        </svg>
-                                    </motion.div>
+                                    />
                                 </span>
                                 ?
                             </motion.h1>
@@ -474,7 +262,7 @@ export default memo(function Rebrand() {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ duration: 1, delay: 1 }}
-                            className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed"
+                            className="text-lg md:text-xl text-white/60 max-w-2xl mx-auto leading-relaxed"
                         >
                             snažíme se držet krok s nejnovějšími designovými
                             trendy a{" "}
@@ -485,15 +273,15 @@ export default memo(function Rebrand() {
                         </motion.p>
                     </div>
 
-                    {/* Enhanced card with glass morphism effect */}
+                    {/* Enhanced card with minimal design */}
                     <motion.div
                         initial={{ opacity: 0, y: 40 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.5 }}
                     >
-                        <Card className="bg-card/30 backdrop-blur-xl border-border/20 shadow-[0_10px_50px_rgba(0,0,0,0.1)] overflow-hidden rounded-2xl hover:shadow-[0_20px_80px_rgba(0,0,0,0.15)] transition-all duration-500">
+                        <Card className="bg-[#171717] border-white/5 shadow-md overflow-hidden rounded-none">
                             <CardHeader className="text-center pb-2">
-                                <CardTitle className="flex items-center justify-center gap-2 text-2xl font-medium">
+                                <CardTitle className="flex items-center justify-center gap-2 text-2xl font-medium tracking-tight">
                                     <motion.div
                                         animate={{ rotate: 360 }}
                                         transition={{
@@ -502,14 +290,14 @@ export default memo(function Rebrand() {
                                             ease: "linear",
                                         }}
                                     >
-                                        <Clock className="h-5 w-5 text-primary" />
+                                        <Clock className="h-5 w-5 text-white" />
                                     </motion.div>
-                                    <span className="font-serif tracking-wide text-white/80">
+                                    <span className="tracking-tight text-white">
                                         čas běží
                                     </span>
                                 </CardTitle>
-                                <CardDescription className="text-base flex items-center justify-center gap-1">
-                                    <span className="text-muted-foreground/80">
+                                <CardDescription className="text-base flex items-center justify-center gap-1 uppercase tracking-wider text-xs">
+                                    <span className="text-white/50">
                                         náš nový design se připravuje
                                     </span>
                                     <div className="flex items-center justify-center">
@@ -527,7 +315,7 @@ export default memo(function Rebrand() {
                                                     delay: i * 0.2,
                                                     ease: "easeInOut",
                                                 }}
-                                                className="text-primary font-medium text-lg"
+                                                className="text-white font-medium text-lg"
                                             >
                                                 .
                                             </motion.span>
@@ -539,14 +327,6 @@ export default memo(function Rebrand() {
                             <CardContent className="pt-8 pb-6 flex justify-center">
                                 <LazyAnalogClock />
                             </CardContent>
-
-                            {/* Added call-to-action button */}
-                            <motion.div
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                transition={{ delay: 1.5, duration: 0.8 }}
-                                className="pb-8 flex justify-center"
-                            ></motion.div>
                         </Card>
                     </motion.div>
 
@@ -557,7 +337,7 @@ export default memo(function Rebrand() {
                         transition={{ duration: 1, delay: 1.2 }}
                         className="pt-8 text-center"
                     >
-                        <p className="text-sm text-muted-foreground/70 flex flex-col sm:flex-row items-center justify-center gap-2">
+                        <p className="text-sm uppercase tracking-wider text-white/40 flex flex-col sm:flex-row items-center justify-center gap-2">
                             <span>© 2024 minjiya.</span>
                             <span className="hidden sm:inline">•</span>
                             <span>všechna práva vyhrazena.</span>

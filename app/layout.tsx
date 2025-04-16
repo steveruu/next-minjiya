@@ -1,32 +1,16 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Bricolage_Grotesque } from "next/font/google";
 import localFont from "next/font/local";
 
 import "./globals.css";
 
-// Use local fonts instead of Google Fonts to avoid network failures
-const rubik = localFont({
-    src: [
-        {
-            path: "../public/fonts/Rubik-Regular.woff2",
-            weight: "400",
-            style: "normal",
-        },
-        {
-            path: "../public/fonts/Rubik-Medium.woff2",
-            weight: "500",
-            style: "normal",
-        },
-        {
-            path: "../public/fonts/Rubik-Bold.woff2",
-            weight: "700",
-            style: "normal",
-        },
-    ],
+const bricolage = Bricolage_Grotesque({
+    subsets: ["latin", "latin-ext"],
     display: "swap",
-    fallback: ["system-ui", "arial", "sans-serif"],
-    variable: "--font-rubik",
+    variable: "--font-bricolage",
+    weight: ["400", "500", "600", "700"],
 });
 
 const stick = localFont({
@@ -112,13 +96,13 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="cs" className="scroll-smooth">
+        <html lang="cs" className="dark scroll-smooth">
             <head>
-                <meta name="theme-color" content="#a83bff" />
+                <meta name="theme-color" content="#121212" />
                 <link rel="preload" as="image" href="/mt.svg" />
             </head>
             <body
-                className={`bg-[length:40px_40px] [background-image:linear-gradient(to_right,rgba(128,128,128,0.1)_1px,transparent_1px),linear-gradient(to_bottom,rgba(128,128,128,0.1)_1px,transparent_1px)] ${rubik.className} ${stick.variable}`}
+                className={`bg-minjiya bg-grid-pattern ${bricolage.variable} ${stick.variable}`}
             >
                 {children}
                 <Analytics />

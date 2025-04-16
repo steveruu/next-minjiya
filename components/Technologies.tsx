@@ -15,8 +15,8 @@ export default function Technologies() {
     return (
         <div className="relative max-w-[1800px] xl:py-12">
             {/* Gradient masks */}
-            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10" />
-            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10" />
+            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-transparent to-transparent z-10" />
+            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-transparent to-transparent z-10" />
 
             {/* Marquee content */}
             <Marquee
@@ -32,7 +32,7 @@ export default function Technologies() {
                             height={logo.height}
                             width={logo.width}
                             draggable={false}
-                            className="transition-all duration-300 filter grayscale hover:grayscale-0"
+                            className="transition-all duration-300 filter grayscale"
                         />
                     </div>
                 ))}
