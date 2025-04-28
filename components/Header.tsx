@@ -15,14 +15,14 @@ export default function Header({ ...props }) {
                 <nav className="flex items-center justify-between h-16">
                     <a
                         href="#"
-                        className="flex items-center gap-3 text-white hover:opacity-80 transition-opacity"
+                        className="flex items-center justify-center gap-3 flex-1 md:flex-none text-white hover:opacity-80 transition-opacity"
                     >
                         <Image
                             src="/mt-newgen.svg"
                             alt="minjiya"
                             width={36}
                             height={36}
-                            className="transform hover:scale-105 transition-transform"
+                            className="transform hover:scale-105 transition-transform "
                         />
                     </a>
 
@@ -45,30 +45,6 @@ export default function Header({ ...props }) {
                             </motion.a>
                         ))}
                     </div>
-
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 0.5, delay: 0.4 }}
-                        className="md:hidden"
-                    >
-                        <button className="p-1 text-white/90 hover:text-white">
-                            <svg
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                    d="M4 6H20M4 12H20M4 18H20"
-                                    stroke="currentColor"
-                                    strokeWidth="2"
-                                    strokeLinecap="square"
-                                />
-                            </svg>
-                        </button>
-                    </motion.div>
                 </nav>
             </div>
         </motion.header>
