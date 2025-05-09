@@ -131,7 +131,7 @@ export default function StihejPage() {
                     <div className="rounded-3xl overflow-hidden border border-white/10 backdrop-blur-sm bg-white/5 p-12 mt-2">
                         <div className="flex justify-center items-center">
                             <div className="text-center max-w-3xl mx-auto">
-                                <h2 className="text-4xl sm:text-5xl font-bold mb-6 font-bricolage">Stíhej! ještě dnes</h2>
+                                <h2 className="text-4xl sm:text-5xl font-bold mb-6 font-bricolage">Stáhni a stíhej!</h2>
                                 <p className="text-xl text-gray-400 mb-8 font-inter">
                                     Stáhni si aplikaci a proměň své každodenní cestování v Liberci. <br /> K dispozici pro iOS a Android.
                                 </p>
