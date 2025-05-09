@@ -1,6 +1,6 @@
 import Card from "@/components/Card";
 
-import stihni from "@/public/images/stihnito.png";
+import stihej from "@/public/images/stihej.png";
 import millers from "@/public/images/millers.png";
 import drinkapp from "@/public/images/drinkapp.png";
 // import unknown from "@/public/images/unknown.png";
@@ -23,10 +23,10 @@ export default function OurProjects() {
                     unknown
                 /> */}
                 <Card
-                    title="Stihni.to"
+                    title="Stíhej!"
                     description="Mobilní aplikace pro sledování spojů MHD v Liberci. Vyvinuta pomocí React Native a Expo s důrazem na přesnost a real-time."
-                    image={stihni}
-                    link="./stihni-to"
+                    image={stihej}
+                    link="./stihej"
                     unknown={false}
                 />
                 <Card
