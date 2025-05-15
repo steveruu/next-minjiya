@@ -63,8 +63,6 @@ export const metadata: Metadata = {
         images: [
             {
                 url: "https://minjiya.com/mt.png",
-                width: 800,
-                height: 600,
                 alt: "minjiya - Tvoříme webové a mobilní aplikace budoucnosti",
             },
         ],
@@ -78,8 +76,6 @@ export const metadata: Metadata = {
         images: [
             {
                 url: "https://minjiya.com/mt.png",
-                width: 800,
-                height: 600,
                 alt: "minjiya - Tvoříme webové a mobilní aplikace budoucnosti",
             },
         ],
