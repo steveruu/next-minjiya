@@ -4,7 +4,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = "https://minjiya.com";
     const currentDate = new Date();
 
-    // Define common pages
     const routes = [
         {
             url: baseUrl,
@@ -16,10 +15,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
             url: `${baseUrl}/drinkapp`,
             lastModified: currentDate,
             changeFrequency: "weekly" as const,
-            priority: 0.9,
+            priority: 0.4,
         },
         {
-            url: `${baseUrl}/stihni-to`,
+            url: `${baseUrl}/stihej`,
             lastModified: currentDate,
             changeFrequency: "weekly" as const,
             priority: 0.9,

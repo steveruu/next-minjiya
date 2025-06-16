@@ -6,17 +6,12 @@ export default function robots(): MetadataRoute.Robots {
             {
                 userAgent: "*",
                 allow: ["/"],
-                disallow: [
-                    "/api/",
-                    "/newshyshow.php/",
-                    "/*.json$",
-                    "/private/",
-                ],
+                disallow: ["/api/", "/*.json$", "/private/"],
             },
             {
                 userAgent: "Googlebot",
                 allow: ["/"],
-                disallow: ["/api/", "/newshyshow.php/"],
+                disallow: ["/api/"],
             },
         ],
         sitemap: "https://minjiya.com/sitemap.xml",

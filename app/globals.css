@@ -2,18 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-    font-family: Mona Sans;
-    src: url("/fonts/MonaSans-Bold.woff2") format("woff2");
-    font-weight: bold;
-}
-
-@font-face {
-    font-family: Mona Sans;
-    src: url("/fonts/MonaSans-Regular.woff2") format("woff2");
-    font-weight: normal;
-}
-
 @layer utilities {
     .text-balance {
         text-wrap: balance;
