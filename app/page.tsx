@@ -19,13 +19,23 @@ export default function CzechHome() {
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "minjiya",
+        "alternateName": "minjiyalabs",
         "url": "https://minjiya.com",
         "logo": "https://minjiya.com/mt.png",
-        "description": "Tvoříme webové a mobilní aplikace budoucnosti. Profesionální vývoj s důrazem na design a uživatelskou zkušenost.",
+        "description": "Oficiální stránka minjiya (@minjiyalabs) - Tvoříme webové a mobilní aplikace budoucnosti. Všechny naše open-source projekty na github.com/minjiyalabs.",
+        "foundingDate": "2024",
         "sameAs": [
             "https://github.com/minjiyalabs",
             "https://x.com/minjiyalabs",
             "https://instagram.com/minjiyalabs"
+        ],
+        "knowsAbout": [
+            "Web Development",
+            "Mobile Applications",
+            "React",
+            "Next.js",
+            "TypeScript",
+            "Open Source"
         ],
         "contactPoint": {
             "@type": "ContactPoint",
@@ -233,7 +243,7 @@ export default function CzechHome() {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="text-white/60 hover:text-white transition-colors duration-300 flex items-center gap-2 text-sm"
-                                    aria-label="GitHub minjiyalabs"
+                                    aria-label="minjiya GitHub - všechny naše open-source projekty"
                                 >
                                     <FaGithub className="text-lg" />
                                     <span>github.com/minjiyalabs</span>
@@ -243,7 +253,7 @@ export default function CzechHome() {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="text-white/60 hover:text-white transition-colors duration-300 flex items-center gap-2 text-sm"
-                                    aria-label="X minjiyalabs"
+                                    aria-label="minjiya na X - sledujte @minjiyalabs"
                                 >
                                     <FaXTwitter className="text-lg" />
                                     <span>x.com/minjiyalabs</span>
@@ -253,7 +263,7 @@ export default function CzechHome() {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="text-white/60 hover:text-white transition-colors duration-300 flex items-center gap-2 text-sm"
-                                    aria-label="Instagram minjiyalabs"
+                                    aria-label="minjiya na Instagram - @minjiyalabs"
                                 >
                                     <FaInstagram className="text-lg" />
                                     <span>@minjiyalabs</span>
@@ -263,6 +273,11 @@ export default function CzechHome() {
                     </div>
 
                     <div className="border-t border-white/10 pt-6">
+                        <div className="text-center mb-4">
+                            <p className="text-white/60 text-sm mb-2">
+                                <strong>minjiya.com</strong> je jedinou oficiální stránkou týmu <strong>@minjiyalabs</strong>
+                            </p>
+                        </div>
                         <p className="text-white/40 text-center text-sm max-w-3xl mx-auto hover:text-white/60 transition-colors duration-300">
                             Mezi minjiya a Tailwind CSS, Next.js, React, Go, TypeScript, Prisma, Expo neexistují žádné vazby. <br />Všechny obchodní značky a ochranné známky jsou vlastnictvím jejich příslušných vlastníků.
                         </p>

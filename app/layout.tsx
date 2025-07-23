@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     ],
     title: "minjiya | Tvoříme webové a mobilní aplikace budoucnosti",
     description:
-        "minjiya (@minjiyalabs) - Tvoříme webové a mobilní aplikace budoucnosti. Profesionální vývoj moderních webových stránek a mobilních aplikací s důrazem na design a uživatelskou zkušenost. Sledujte @minjiyalabs na GitHub, X a Instagram.",
+        "Oficiální stránka minjiya (@minjiyalabs) - Tvoříme webové a mobilní aplikace budoucnosti. Profesionální vývoj moderních webových stránek a mobilních aplikací s důrazem na design a uživatelskou zkušenost. Všechny naše open-source projekty na github.com/minjiyalabs. Sledujte @minjiyalabs na GitHub, X a Instagram.",
     generator: "Next.js",
     applicationName: "minjiya",
     referrer: "origin-when-cross-origin",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
         url: "https://minjiya.com",
         title: "minjiya | Tvoříme webové a mobilní aplikace budoucnosti",
         description:
-            "minjiya (@minjiyalabs) - Tvoříme webové a mobilní aplikace budoucnosti. Profesionální vývoj s důrazem na design a uživatelskou zkušenost. Sledujte @minjiyalabs na GitHub, X a Instagram.",
+            "Oficiální stránka minjiya (@minjiyalabs) - Tvoříme webové a mobilní aplikace budoucnosti. Všechny naše open-source projekty na github.com/minjiyalabs. Sledujte @minjiyalabs na GitHub, X a Instagram.",
         siteName: "minjiya",
         images: [
             {
@@ -107,6 +107,10 @@ export default function RootLayout({
                 <meta name="social:github" content="@minjiyalabs" />
                 <meta name="social:twitter" content="@minjiyalabs" />
                 <meta name="social:instagram" content="@minjiyalabs" />
+                <meta property="og:site_name" content="minjiya" />
+                <meta name="description" content="Oficiální stránka minjiya (@minjiyalabs) - všechny open-source projekty na github.com/minjiyalabs" />
+                <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+                <link rel="canonical" href="https://minjiya.com" />
                 <link rel="preload" as="image" href="/mt.svg" />
             </head>
             <body
