@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { FaGithub, FaInstagram, FaXTwitter } from "react-icons/fa6";
 
 export default function Header({ ...props }) {
     return (
@@ -44,6 +45,37 @@ export default function Header({ ...props }) {
                                 <span className="absolute left-0 right-0 bottom-0 h-[1px] bg-white/0 group-hover:bg-white/60 transform origin-left transition-all duration-300 scale-x-0 group-hover:scale-x-100"></span>
                             </motion.a>
                         ))}
+                    </div>
+
+                    {/* Social Media Links for minjiyalabs */}
+                    <div className="flex items-center gap-3">
+                        <a
+                            href="https://github.com/minjiyalabs"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-white/60 hover:text-white transition-colors duration-300 hover:scale-110 transform"
+                            aria-label="GitHub minjiyalabs"
+                        >
+                            <FaGithub className="text-lg" />
+                        </a>
+                        <a
+                            href="https://x.com/minjiyalabs"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-white/60 hover:text-white transition-colors duration-300 hover:scale-110 transform"
+                            aria-label="X minjiyalabs"
+                        >
+                            <FaXTwitter className="text-lg" />
+                        </a>
+                        <a
+                            href="https://instagram.com/minjiyalabs"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-white/60 hover:text-white transition-colors duration-300 hover:scale-110 transform"
+                            aria-label="Instagram minjiyalabs"
+                        >
+                            <FaInstagram className="text-lg" />
+                        </a>
                     </div>
                 </nav>
             </div>

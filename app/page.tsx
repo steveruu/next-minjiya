@@ -3,7 +3,7 @@
 import Header from "@/components/Header";
 import dynamic from 'next/dynamic';
 import Image from "next/image";
-import { FaArrowDown, FaEnvelope, FaGithub, FaInstagram, FaCode, FaRocket } from "react-icons/fa6";
+import { FaArrowDown, FaEnvelope, FaGithub, FaInstagram, FaXTwitter, FaCode, FaRocket } from "react-icons/fa6";
 import Script from "next/script";
 import { motion } from "framer-motion";
 
@@ -23,8 +23,9 @@ export default function CzechHome() {
         "logo": "https://minjiya.com/mt.png",
         "description": "Tvoříme webové a mobilní aplikace budoucnosti. Profesionální vývoj s důrazem na design a uživatelskou zkušenost.",
         "sameAs": [
-            "https://github.com/minjiya",
-            "https://instagram.com/minjiya"
+            "https://github.com/minjiyalabs",
+            "https://x.com/minjiyalabs",
+            "https://instagram.com/minjiyalabs"
         ],
         "contactPoint": {
             "@type": "ContactPoint",
@@ -190,8 +191,9 @@ export default function CzechHome() {
                         >
                             {[
                                 { icon: FaEnvelope, label: "Email", href: "mailto:inquiries@minjiya.com" },
-                                { icon: FaInstagram, label: "Instagram", href: "https://instagram.com/minjiyalabs" },
                                 { icon: FaGithub, label: "GitHub", href: "https://github.com/minjiyalabs" },
+                                { icon: FaXTwitter, label: "X", href: "https://x.com/minjiyalabs" },
+                                { icon: FaInstagram, label: "Instagram", href: "https://instagram.com/minjiyalabs" },
                             ].map(({ icon: Icon, label, href }, index) => (
                                 <motion.a
                                     key={label}
@@ -215,10 +217,57 @@ export default function CzechHome() {
                 </div>
             </div>
 
-            <footer className="bg-[#0a0a0a] py-8 px-4 border-t border-white/5">
-                <p className="text-white/40 text-center text-sm max-w-3xl mx-auto hover:text-white/60 transition-colors duration-300">
-                    Mezi minjiya a Tailwind CSS, Next.js, React, Go, TypeScript, Prisma, Expo neexistují žádné vazby. <br />Všechny obchodní značky a ochranné známky jsou vlastnictvím jejich příslušných vlastníků.
-                </p>
+            <footer className="bg-[#0a0a0a] py-12 px-4 border-t border-white/5">
+                <div className="container mx-auto">
+                    <div className="flex flex-col md:flex-row justify-between items-center gap-6 mb-8">
+                        <div className="flex flex-col items-center md:items-start">
+                            <h3 className="text-white font-semibold text-lg mb-3">minjiya</h3>
+                            <p className="text-white/60 text-sm text-center md:text-left">Tvoříme webové a mobilní aplikace budoucnosti</p>
+                        </div>
+
+                        <div className="flex flex-col items-center md:items-end">
+                            <h4 className="text-white/80 font-medium text-sm mb-3 uppercase tracking-wider">Sledujte @minjiyalabs</h4>
+                            <div className="flex gap-4">
+                                <a
+                                    href="https://github.com/minjiyalabs"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-white/60 hover:text-white transition-colors duration-300 flex items-center gap-2 text-sm"
+                                    aria-label="GitHub minjiyalabs"
+                                >
+                                    <FaGithub className="text-lg" />
+                                    <span>github.com/minjiyalabs</span>
+                                </a>
+                                <a
+                                    href="https://x.com/minjiyalabs"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-white/60 hover:text-white transition-colors duration-300 flex items-center gap-2 text-sm"
+                                    aria-label="X minjiyalabs"
+                                >
+                                    <FaXTwitter className="text-lg" />
+                                    <span>x.com/minjiyalabs</span>
+                                </a>
+                                <a
+                                    href="https://instagram.com/minjiyalabs"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-white/60 hover:text-white transition-colors duration-300 flex items-center gap-2 text-sm"
+                                    aria-label="Instagram minjiyalabs"
+                                >
+                                    <FaInstagram className="text-lg" />
+                                    <span>@minjiyalabs</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="border-t border-white/10 pt-6">
+                        <p className="text-white/40 text-center text-sm max-w-3xl mx-auto hover:text-white/60 transition-colors duration-300">
+                            Mezi minjiya a Tailwind CSS, Next.js, React, Go, TypeScript, Prisma, Expo neexistují žádné vazby. <br />Všechny obchodní značky a ochranné známky jsou vlastnictvím jejich příslušných vlastníků.
+                        </p>
+                    </div>
+                </div>
             </footer>
         </>
     );

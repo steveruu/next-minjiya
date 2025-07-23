@@ -25,6 +25,10 @@ export const metadata: Metadata = {
     keywords: [
         "minjiya",
         "minjiyalabs",
+        "@minjiyalabs",
+        "minjiya.com",
+        "github.com/minjiyalabs",
+        "x.com/minjiyalabs",
         "web",
         "stránky",
         "vývoj",
@@ -41,7 +45,7 @@ export const metadata: Metadata = {
     ],
     title: "minjiya | Tvoříme webové a mobilní aplikace budoucnosti",
     description:
-        "minjiya - Tvoříme webové a mobilní aplikace budoucnosti. Profesionální vývoj moderních webových stránek a mobilních aplikací s důrazem na design a uživatelskou zkušenost.",
+        "minjiya (@minjiyalabs) - Tvoříme webové a mobilní aplikace budoucnosti. Profesionální vývoj moderních webových stránek a mobilních aplikací s důrazem na design a uživatelskou zkušenost. Sledujte @minjiyalabs na GitHub, X a Instagram.",
     generator: "Next.js",
     applicationName: "minjiya",
     referrer: "origin-when-cross-origin",
@@ -58,7 +62,7 @@ export const metadata: Metadata = {
         url: "https://minjiya.com",
         title: "minjiya | Tvoříme webové a mobilní aplikace budoucnosti",
         description:
-            "Tvoříme webové a mobilní aplikace budoucnosti. Profesionální vývoj s důrazem na design a uživatelskou zkušenost.",
+            "minjiya (@minjiyalabs) - Tvoříme webové a mobilní aplikace budoucnosti. Profesionální vývoj s důrazem na design a uživatelskou zkušenost. Sledujte @minjiyalabs na GitHub, X a Instagram.",
         siteName: "minjiya",
         images: [
             {
@@ -72,14 +76,14 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "minjiya | Tvoříme webové a mobilní aplikace budoucnosti",
         description:
-            "Tvoříme webové a mobilní aplikace budoucnosti. Profesionální vývoj s důrazem na design a uživatelskou zkušenost.",
+            "minjiya (@minjiyalabs) - Tvoříme webové a mobilní aplikace budoucnosti. Profesionální vývoj s důrazem na design a uživatelskou zkušenost. Sledujte @minjiyalabs na GitHub, X a Instagram.",
         images: [
             {
                 url: "https://minjiya.com/mt.png",
                 alt: "minjiya - Tvoříme webové a mobilní aplikace budoucnosti",
             },
         ],
-        creator: "@minjiya",
+        creator: "@minjiyalabs",
     },
     alternates: {
         canonical: "https://minjiya.com",
@@ -95,6 +99,14 @@ export default function RootLayout({
         <html lang="cs" className="dark scroll-smooth">
             <head>
                 <meta name="theme-color" content="#121212" />
+                <meta name="author" content="minjiya (@minjiyalabs)" />
+                <meta name="github" content="https://github.com/minjiyalabs" />
+                <meta name="twitter" content="https://x.com/minjiyalabs" />
+                <meta name="instagram" content="https://instagram.com/minjiyalabs" />
+                <meta name="organization" content="minjiyalabs" />
+                <meta name="social:github" content="@minjiyalabs" />
+                <meta name="social:twitter" content="@minjiyalabs" />
+                <meta name="social:instagram" content="@minjiyalabs" />
                 <link rel="preload" as="image" href="/mt.svg" />
             </head>
             <body
