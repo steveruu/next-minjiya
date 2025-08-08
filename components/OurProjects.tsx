@@ -1,9 +1,7 @@
 import Card from "@/components/Card";
-
 import stihej from "@/public/images/stihej.png";
-import millers from "@/public/images/millers.png";
+import citadel from "@/public/images/citadel.png";
 import drinkapp from "@/public/images/drinkapp.png";
-// import unknown from "@/public/images/unknown.png";
 
 export default function OurProjects() {
     return (
@@ -15,13 +13,6 @@ export default function OurProjects() {
                 Naše projekty
             </p>
             <div className="flex flex-row flex-wrap gap-4 mt-10 mb-10 justify-center items-center max-w-[80%] mx-auto">
-                {/* <Card
-                    title="???"
-                    description="*&^%$#@!~`+=-_:;<>?{}[]()|\\/.,><!@#$%^&*()_+{}|:<>?[];',./`~!@#$%^&*()_+|}{:?><~`!@#$%^&*()_+|}{:?><~`"
-                    image={unknown}
-                    link={null}
-                    unknown
-                /> */}
                 <Card
                     title="Stíhej!"
                     description="Mobilní aplikace pro sledování spojů MHD v Liberci. Vyvinuta pomocí React Native a Expo s důrazem na přesnost a real-time."
@@ -37,10 +28,10 @@ export default function OurProjects() {
                     unknown={false}
                 />
                 <Card
-                    title="Millers Oils"
-                    description="Online e-shop specializující se na prodej olejů a maziv, postavený na technologiích React a Next.js. Aktuálně ve fázi vývoje."
-                    image={millers}
-                    link={null}
+                    title="citadel"
+                    description="Aplikace pro Android a iOS zaměřená na stoickou praxi. Postavená na React Native a Expu."
+                    image={citadel}
+                    link={"./citadel"}
                     unknown={false}
                 />
             </div>

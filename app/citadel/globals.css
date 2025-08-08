@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --c-bg: 40 33% 96%; /* beige */
+        --c-bg-soft: 40 33% 98%;
+        --c-fg: 24 15% 15%; /* warm dark */
+        --c-muted: 24 10% 40%;
+    }
+
+    body {
+        @apply bg-[hsl(var(--c-bg))] text-[hsl(var(--c-fg))];
+    }
+
+    .font-sans-citadel {
+        font-family: var(--font-inter), system-ui, -apple-system, Segoe UI,
+            Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji",
+            sans-serif;
+    }
+    .font-serif-citadel {
+        font-family: var(--font-lora), Georgia, Cambria, "Times New Roman",
+            Times, serif;
+    }
+}
+
+@layer components {
+    .card-soft {
+        @apply rounded-lg border border-black/5 bg-[hsl(var(--c-bg-soft))] shadow-sm;
+    }
+}
