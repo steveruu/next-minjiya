@@ -59,6 +59,7 @@ const config: Config = {
                 sans: ["var(--font-bricolage)", "system-ui", "sans-serif"],
                 bricolage: ["var(--font-bricolage)", "system-ui", "sans-serif"],
                 stick: ["var(--font-stick)", "monospace"],
+                geistMono: ["var(--font-geist-mono)", "monospace"],
             },
             keyframes: {
                 marquee: {

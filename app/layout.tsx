@@ -1,17 +1,11 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { Bricolage_Grotesque } from "next/font/google";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
 import localFont from "next/font/local";
 
 import "./globals.css";
-
-const bricolage = Bricolage_Grotesque({
-    subsets: ["latin", "latin-ext"],
-    display: "swap",
-    variable: "--font-bricolage",
-    weight: ["400", "500", "600", "700"],
-});
 
 const stick = localFont({
     src: "../public/fonts/Stick-Regular.woff2",
@@ -114,7 +108,7 @@ export default function RootLayout({
                 <link rel="preload" as="image" href="/mt.svg" />
             </head>
             <body
-                className={`bg-minjiya bg-grid-pattern ${bricolage.variable} ${stick.variable}`}
+                className={`bg-minjiya bg-grid-pattern ${GeistSans.className} ${GeistMono.variable} ${stick.variable}`}
             >
                 {children}
                 <Analytics />

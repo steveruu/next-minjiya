@@ -20,7 +20,7 @@ export default function CodePreview() {
 
                 {/* Code content */}
                 <pre className="overflow-x-auto bg-[#161616] backdrop-blur-md rounded-none shadow-md border-[#8b5cf6]/20">
-                    <code className="block text-[13px] md:text-sm leading-tight text-white py-2 md:py-4 px-2 md:px-4 font-mono">
+                    <code className="block text-[13px] md:text-sm leading-tight text-white py-2 md:py-4 px-2 md:px-4 font-geistMono">
                         <span className="text-[#8b5cf6]/90">import</span>{" "}
                         <span className="text-white">Header</span>{" "}
                         <span className="text-[#8b5cf6]/90">from</span>{" "}
