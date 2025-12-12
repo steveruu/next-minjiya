@@ -238,13 +238,7 @@ export default function StudyBuddyPage() {
     }, []);
 
     const features = [
-        {
-            icon: "🧠",
-            title: "Chytrý přepínač modelů",
-            description:
-                "Dva mozky jsou víc než jeden. Flash model pro rychlé odpovědi, Pro model pro složité úlohy. Automaticky se přepíná podle potřeby.",
-            gradient: `linear-gradient(135deg, ${colors.accent.primary}80, ${colors.accent.secondary}80)`,
-        },
+
         {
             icon: "📚",
             title: "Nekonečná paměť & RAG",
@@ -258,27 +252,6 @@ export default function StudyBuddyPage() {
             description:
                 "Nechápeš rovnici? Vyfoť ji. Vision model převede klikyháky na data a vysvětlí ti postup, nejen výsledek.",
             gradient: `linear-gradient(135deg, ${colors.status.warning}80, ${colors.accent.primary}80)`,
-        },
-        {
-            icon: "🧘",
-            title: "Zen Mode",
-            description:
-                "Jedním kliknutím zmizí celý svět. Vidíš jen ten jeden aktuální úkol. Žádné notifikace, žádný stres.",
-            gradient: `linear-gradient(135deg, ${colors.status.success}80, ${colors.accent.secondary}80)`,
-        },
-        {
-            icon: "🔪",
-            title: "Slicer",
-            description:
-                "AI vezme obří zadání a rozseká ho na mikro-úkoly na 15 minut. Nikdy neuvidíš děsivé 'Napiš práci'.",
-            gradient: `linear-gradient(135deg, ${colors.accent.secondary}80, ${colors.status.info}80)`,
-        },
-        {
-            icon: "🚨",
-            title: "Panic Button",
-            description:
-                "Nestíháš a hroutíš se? AI okamžitě přepočítá priority a dá ti krizový výcuc toho nejdůležitějšího.",
-            gradient: `linear-gradient(135deg, ${colors.status.error}80, ${colors.accent.primary}80)`,
         },
         {
             icon: "🎧",
@@ -681,7 +654,7 @@ export default function StudyBuddyPage() {
                         className="relative z-10"
                     >
                         <div className="flex items-center gap-3 mb-6">
-                            <span className="text-4xl">🛡️</span>
+                            <span className="text-4xl">❤️‍🩹</span>
                             <h2
                                 className="text-3xl md:text-4xl font-bold"
                                 style={{ color: colors.text.primary }}
@@ -947,7 +920,7 @@ export default function StudyBuddyPage() {
                                 backgroundImage: `linear-gradient(135deg, ${colors.accent.primary}, ${colors.accent.secondary})`,
                             }}
                         >
-                            zen studium
+                            zen
                         </span>
                         ?
                     </h2>
