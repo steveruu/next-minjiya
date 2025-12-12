@@ -439,7 +439,7 @@ export default function StudyBuddyPage() {
                                 className="text-xl md:text-2xl mb-10 leading-relaxed"
                                 style={{ color: colors.text.secondary }}
                             >
-                                Zapomeň na chaos v Teams, ztracené zápisky a noční úzkosti před písemkou.
+                                Zapomeň na chaos v Teams, shánění zápisků a učení na písemku dlouho do noci.
                                 <br className="hidden md:block" />
                                 StudyBuddy je{" "}
                                 <span style={{ color: colors.text.accent }}>inteligentní AI vrstva</span>{" "}
