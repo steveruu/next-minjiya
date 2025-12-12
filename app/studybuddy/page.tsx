@@ -909,7 +909,7 @@ export default function StudyBuddyPage() {
                         </span>
                     </div>
                     <p style={{ color: colors.text.muted }}>
-                        © 2025 StudyBuddy. Soutěžní projekt.
+                        © 2025 minjiyalabs
                     </p>
                     <div className="flex items-center gap-6">
                         <a
