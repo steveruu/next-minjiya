@@ -820,6 +820,113 @@ export default function StudyBuddyPage() {
                 </div>
             </section>
 
+            <section id="about-us" className="relative py-24 px-6">
+                <div className="max-w-4xl mx-auto">
+                    <motion.div
+                        initial={{ opacity: 0, y: 40 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                        className="text-center mb-12"
+                    >
+                        <h2
+                            className="text-3xl md:text-4xl font-bold mb-4"
+                            style={{ color: colors.text.primary }}
+                        >
+                            Pořád nejsi přesvědčenej?
+                        </h2>
+                        <p
+                            className="text-lg"
+                            style={{ color: colors.text.secondary }}
+                        >
+                            Chápem to. Další AI produkt = další hype.
+                        </p>
+                    </motion.div>
+
+                    <div className="grid md:grid-cols-3 gap-8">
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, delay: 0 }}
+                            className="p-6 rounded-2xl text-center"
+                            style={{
+                                background: `linear-gradient(135deg, ${colors.background.card}80, ${colors.background.secondary}80)`,
+                                border: `1px solid ${colors.border.primary}`,
+                            }}
+                        >
+                            <div className="text-4xl mb-4">👥</div>
+                            <h3
+                                className="text-xl font-semibold mb-3"
+                                style={{ color: colors.text.primary }}
+                            >
+                                Jsme tým dvou lidí
+                            </h3>
+                            <p style={{ color: colors.text.secondary }}>
+                                Žádný korporát, žádný investoři, žádná akciovka. <br /> Dva studenti, co chtěj pomoct ostatním přežít školu. <br /> Víme, jaký peklo to dokáže být.
+                            </p>
+                        </motion.div>
+
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, delay: 0.1 }}
+                            className="p-6 rounded-2xl text-center"
+                            style={{
+                                background: `linear-gradient(135deg, ${colors.background.card}80, ${colors.background.secondary}80)`,
+                                border: `1px solid ${colors.border.primary}`,
+                            }}
+                        >
+                            <div className="text-4xl mb-4">🧪</div>
+                            <h3
+                                className="text-xl font-semibold mb-3"
+                                style={{ color: colors.text.primary }}
+                            >
+                                AI není magie
+                            </h3>
+                            <p style={{ color: colors.text.secondary }}>
+                                Víme, že AI občas trošku kecá. Proto máme RAG. <br /> Proto máme tvoje zápisky. <br /> Žádný false promises – nejsme tvůj ex.
+                            </p>
+                        </motion.div>
+
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, delay: 0.2 }}
+                            className="p-6 rounded-2xl text-center"
+                            style={{
+                                background: `linear-gradient(135deg, ${colors.background.card}80, ${colors.background.secondary}80)`,
+                                border: `1px solid ${colors.border.primary}`,
+                            }}
+                        >
+                            <div className="text-4xl mb-4">🔐</div>
+                            <h3
+                                className="text-xl font-semibold mb-3"
+                                style={{ color: colors.text.primary }}
+                            >
+                                Tvoje data jsou tvoje
+                            </h3>
+                            <p style={{ color: colors.text.secondary }}>
+                                Neskončíš v datasetu pro trénink modelu. Nesbíráme nic, co nepotřebujeme. <br /> Nejsme startup, kterej z tvejch zápisků udělá profit.
+                            </p>
+                        </motion.div>
+                    </div>
+
+                    <motion.p
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.4 }}
+                        className="text-center mt-10 text-lg"
+                        style={{ color: colors.text.muted }}
+                    >
+                        Prostě děláme produkt, kterej bychom sami chtěli používat. To je celý.
+                    </motion.p>
+                </div>
+            </section>
+
             {/* Download Section */}
             <section id="download" className="relative py-24 px-6">
                 <motion.div
