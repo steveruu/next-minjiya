@@ -254,7 +254,7 @@ export default function StudyBuddyPage() {
         },
         {
             icon: "📸",
-            title: "Vyfoť & Vyřeš",
+            title: "Vyfoť & vyřeš",
             description:
                 "Nechápeš rovnici? Vyfoť ji. Vision model převede klikyháky na data a vysvětlí ti postup, nejen výsledek.",
             gradient: `linear-gradient(135deg, ${colors.status.warning}80, ${colors.accent.primary}80)`,
@@ -268,7 +268,7 @@ export default function StudyBuddyPage() {
         },
         {
             icon: "🔪",
-            title: "The Slicer",
+            title: "Slicer",
             description:
                 "AI vezme obří zadání a rozseká ho na mikro-úkoly na 15 minut. Nikdy neuvidíš děsivé 'Napiš práci'.",
             gradient: `linear-gradient(135deg, ${colors.accent.secondary}80, ${colors.status.info}80)`,
@@ -282,9 +282,9 @@ export default function StudyBuddyPage() {
         },
         {
             icon: "🎧",
-            title: "Commute Briefings",
+            title: "Doučování na cestách",
             description:
-                "Dojíždíš autobusem? AI ti vygeneruje 3minutový audio podcast na míru. Učení bez koukání do mobilu.",
+                "Dojíždíš? AI ti vygeneruje 3minutový audio na míru. Učení bez koukání do mobilu.",
             gradient: `linear-gradient(135deg, ${colors.accent.primary}80, ${colors.status.success}80)`,
         },
         {
@@ -726,10 +726,10 @@ export default function StudyBuddyPage() {
                                     className="text-xl font-semibold"
                                     style={{ color: colors.text.primary }}
                                 >
-                                    The Slicer
+                                    Slicer
                                 </h3>
                                 <p style={{ color: colors.text.secondary }}>
-                                    Rozseká ročníkovku na 15minutové kousky. Zvládnutelně.
+                                    Rozseká velkej projekt na 15minutové kousky. Zvládnutelně.
                                 </p>
                             </div>
                             <div className="space-y-4">
